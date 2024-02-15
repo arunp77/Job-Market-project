@@ -72,6 +72,10 @@ The project is divided into the following stages and sub-stages
 ```
 Job-Market-Data-Engineering-Project/
 │
+├── .github/
+│   └── workflows/
+│       └── ci.yml           # GitHub Actions workflow file
+│
 ├── scripts/
 │   ├── web_scraping/
 │   │   ├── scraping_script.py
