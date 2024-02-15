@@ -108,11 +108,11 @@ Job-Market-Data-Engineering-Project/
 ## Contributors
 
 - [Arun Kumar Pandey](https://github.com/arunp77)
-  - [Email](arunp77@gmail.com)
+  - [Email to Arun](arunp77@gmail.com)
 - [Brindha Sadayappan](https://github.com/brindha311)
-  - [Email](brindha311@gmail.com)
+  - [Email to Brindha](brindha311@gmail.com)
 - [Khushboo Goyal](https://github.com/khushboo026)
-  - [Email](khushboo026@gmail.com)
+  - [Email to Khusboo](khushboo026@gmail.com)
 ## Feedback and Contributions
 
 Feedback and contributions are welcome! If you have any suggestions or improvements, please open an issue or create a pull request.
