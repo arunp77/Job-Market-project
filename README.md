@@ -104,6 +104,7 @@ Job-Market-Data-Engineering-Project/
    cd Job-Market-Project
    ```
 3. Follow the instructions in each stage's folder to execute the corresponding tasks.
+4. For the contributions, go to [COntribution guidelines](Contribution-guidelines)
 
 ## Contributors
 
