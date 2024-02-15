@@ -92,8 +92,8 @@ Job-Market-Data-Engineering-Project/
 └── documentation/
     └── README.md
     └──  ProjectPlan.md
-    └──  Step-0.md
-    └──  Step-1.md
+    └──  LICENSE.md
+    └──  Contribution-guidelines.md
     └──  UserStories.md
 ```
 
