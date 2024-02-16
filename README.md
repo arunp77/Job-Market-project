@@ -72,16 +72,17 @@ The project is divided into the following stages and sub-stages
 ```
 Job-Market-Data-Engineering-Project/
 │
+├── .env                                      # to save the APIs secret keys and are ignored before pushing the files to GitHub via .gitignore
 ├── .github/
-│   └── workflows/
-│       └── ci.yml           # GitHub Actions workflow file
+│   └── workflows/                            # Contains all the ci-cd yml and the Issue/bug files 
+│       └── ci.yml                            # GitHub Actions workflow file
 │
 ├── scripts/
 │   ├── web_scraping/
-│   │   ├── scraping_script.py
-│   │   └── requirements.txt
+│   │   ├── scraping_script.py                # This could be `.ipynb` file
+│   │   └── requirements.txt                  # Depednent files
 │   └── etl/
-│       └── etl_script.py
+│       └── etl_script.py                     # The etl python file
 │
 ├── data/
 │   ├── scraped_data/
