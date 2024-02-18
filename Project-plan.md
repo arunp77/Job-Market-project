@@ -14,9 +14,9 @@ These are the instructions given to us from the Course cohost and is available a
 | Task | Description and links| Responsibilities to whom |
 |-------------------|--------------------|---------------|
 | Define the context and scope of the project (don't underestimate this step) | This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.| |
-| Get to grips with the different data sources (explore the APIs provided but available to you, the web pages for which you will apply webs-scraping) | [The Muse API](https://www.themuse.com/developers/api/v2) and [Adzuna API](https://developer.adzuna.com/)|  |
+| Get to grips with the different data sources (explore the APIs provided but available to you, the web pages for which you will apply webs-scraping) | [The Muse API](https://www.themuse.com/developers/api/v2) and [Adzuna API](https://developer.adzuna.com/)|  Arun + Brindha |
 | You will be asked to organize the data via different databases: Relational or NoSQL | | |
-| You will have to think about the data architecture, including how to link the different data together. | |  |
+| You will have to think about the data architecture, including how to link the different data together. | We need to do some data cleaning before creating bases and datalake. | Khushboo  |
 
 - Deliverable :
     - Report explaining the different data sources with examples of collected data
