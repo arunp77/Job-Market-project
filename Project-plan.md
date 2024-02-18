@@ -9,7 +9,7 @@ These are the instructions given to us from the Course cohost and is available a
 | Introduction of each team member | All ready done in the [Readme.md file](README.md) |
 | Explanation of the project framework (the different stages) | Each step is discussed below |
 
-## Step 1 
+## Step 1
 ### Discovery of available data sources & Data organization: Deadline 10 February
 | Task | Description and links| Responsibilities to whom |
 |-------------------|--------------------|---------------|
@@ -18,7 +18,7 @@ These are the instructions given to us from the Course cohost and is available a
 | You will be asked to organize the data via different databases: Relational or NoSQL | | |
 | You will have to think about the data architecture, including how to link the different data together. | We need to do some data cleaning before creating bases and datalake. | Khushboo  |
 
-- Deliverable :
+- Deliverable:
     - Report explaining the different data sources with examples of collected data
     - Any document explaining the chosen architecture (UML diagram)
     - File implementing the databases
