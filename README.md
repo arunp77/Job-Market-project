@@ -4,6 +4,15 @@
 
 This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.
 
+## Prerequisite
+- **WebScrapping:** BeautifulSoup
+- Python -3.10.x
+- **SQL/NoSQL:** MySQL DBMS, MongoDB DBMS
+- Dash, ElasticSearch
+- Docker Compose: v2.15.1
+- Docker
+- Airflow
+
 ## Project Stages
 
 The project is divided into the following stages and sub-stages
@@ -119,6 +128,8 @@ Job-Market-Data-Engineering-Project/
   - [Email to Brindha](brindha311@gmail.com)
 - [Khushboo Goyal](https://github.com/khushboo026)
   - [Email to Khusboo](khushboo026@gmail.com)
+- [Vincent](https://github.com/AtoutPillard)
+
 ## Feedback and Contributions
 
 Feedback and contributions are welcome! If you have any suggestions or improvements, please open an issue or create a pull request.
