@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from selenium.webdriver import Chrome
 import pandas as pd
-import json
 
 
 URL = 'https://www.stepstone.de/work/full-stack-engineer/in-berlin?radius=30'
