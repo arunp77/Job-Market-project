@@ -17,7 +17,7 @@ logging.basicConfig(filename='logfile.log', level=logging.DEBUG)
 
 field = "data-science"
 location = "germany"
-
+radius = "100"
 
 def get_jobs_page(url,filename):
     driver = Chrome()
@@ -35,7 +35,9 @@ def get_jobs_page(url,filename):
 def convert_relative_time_to_date(num,relative_time):
     current_datetime = datetime.now()
     num = int(num)
-    if 'hours' in relative_time or 'hour' in relative_time:
+    if 'minutes' in relative_time or 'minute' in relative_time:
+        converted_date = current_datetime - timedelta(minutes=num)
+    elif 'hours' in relative_time or 'hour' in relative_time:
         converted_date = current_datetime - timedelta(hours=num)
     elif 'days' in relative_time or 'day' in relative_time:
         converted_date = current_datetime - timedelta(days=num)
@@ -43,6 +45,8 @@ def convert_relative_time_to_date(num,relative_time):
         converted_date = current_datetime - timedelta(weeks=num)
     elif 'months' in relative_time or 'month' in relative_time:
         converted_date = current_datetime - timedelta(months=num)
+    elif 'years' in relative_time or 'year' in relative_time:
+        converted_date = current_datetime - timedelta(years=num)
     else:
         converted_date = ""
 
@@ -125,12 +129,12 @@ def handler():
 
         df_final = pd.DataFrame()
         # List all files in the directory
-        for i in range(1,51):
-            URL = f'https://www.stepstone.de/jobs/{field}/in-{location}?radius=100&page={i}'
+        for i in range(1,53):
+            URL = f'https://www.stepstone.de/jobs/{field}/in-{location}?radius={radius}&page={i}'
             logging.info(URL)
+            print(URL)
             html_file_path = os.path.join(src_path, f"ss_20240221_{i}.html")
             soup = get_jobs_page(URL, html_file_path)
-
             df = compute_job_details(soup)
             file_create_append(final_file_path_csv, df)
             file_create_append(final_file_path_json, df, False)
@@ -145,3 +149,4 @@ def handler():
 if __name__ == "__main__":
 
     handler()
+
