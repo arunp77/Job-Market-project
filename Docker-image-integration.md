@@ -27,4 +27,39 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 | Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`                      |
 | syntax. When secrets are used in a workflow, their values are masked in the logs to prevent accidental exposure.      |
 
-5. 
+5. After including the Python dependencies in `requirements.txt`, completing the aforementioned steps, and pushing the updates to the GitHub repository, Docker images will automatically be generated and uploaded directly to Docker Hub. You can access these Docker images at: [Docker images](https://hub.docker.com/repository/docker/arunp77/job_market/general). This process ensures that all files are up-to-date in the GitHub repository, and Docker images are seamlessly created.
+
+6. In the `ci.yml` file, we also need to add the  following code snippet, to  access the Docker credentials and then create the docker images and push it to Docker HUb directly. Inside the `jobs` and steps:
+   
+   ```yaml
+   - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build Docker image
+      run: docker build -t arunp77/job_market:latest .
+
+    - name: Push Docker image
+      run: docker push arunp77/job_market:latest
+   ```
+
+
+7. **Creating a docker image directly into the Docker hub**:  
+   - To build the docker image, navigate to the root directory of the project in the terminal and run
+    ```bash
+    docker build -t arunp77/job_market:latest .
+    ```
+   (Here tag `latest` in the repo arunp77/job-market is added.)
+
+   <img src="images/docker-arunp77.png" alt="access-token-Github" width=95% height=auto>
+
+   It is to be  noted that, if there are any changes in this file then a new image should be built using above command. Also you should remember that you may be asked to install the [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
+
+   - To push the image:
+
+        ```bash
+        docker push arunp77/job_market:latest
+        ```
+
