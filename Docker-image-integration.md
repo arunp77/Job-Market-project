@@ -11,7 +11,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
    you must save the token at some safe place. It will be shown just once. 
 3. **Setup GitHub Secrets:** Go to the Github repository. Next click settings tab and then 'Secrets and variables' (`setting > Secrets and variables > Actions`). Click on `New repository secret`. For the secret name, use `DOCKER_USERNAME` and for the secret value, paste your Docker Hub `username`. Repeat the above steps to add another secret named `DOCKER_PASSWORD`, using the Docker Hub access token as the secret value.
    
-   <img src="images/Github-action.png" alt="access-token-Github" width=95% height=auto>
+   <img src="images/Github-action.png" alt="access-token-Github" width=100% height=auto>
 
    Here the added secrets will be securely stored and accessible to the CI workflows in the `.github/workflows/ci.yml`. 
 
