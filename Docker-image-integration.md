@@ -17,9 +17,10 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 
 4. **Add Dockerfile:** Create a `Dockerfile` in the root directory for the project. This file contains instructions for building the Docker image, including setting up the environment and dependencies and it is named as [Dockerfile](Dockerfile) in the root directory. 
    
-   |                                             Note                                                  |
+|                                           Note                                                    |
 |---------------------------------------------------------------------------------------------------|
 | Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`  |
 | syntax. When secrets are used in a workflow, their values are masked in the logs to prevent       |
-| accidental exposure.                                                                              |
-5. 
+| accidental exposure.  
+
+1. 
