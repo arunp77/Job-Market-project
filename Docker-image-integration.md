@@ -27,9 +27,9 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 | Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`                      |
 | syntax. When secrets are used in a workflow, their values are masked in the logs to prevent accidental exposure.      |
 
-5. After including the Python dependencies in `requirements.txt`, completing the aforementioned steps, and pushing the updates to the GitHub repository, Docker images will automatically be generated and uploaded directly to Docker Hub. You can access these Docker images at: [Docker images](https://hub.docker.com/repository/docker/arunp77/job_market/general). This process ensures that all files are up-to-date in the GitHub repository, and Docker images are seamlessly created.
+5. After including the Python dependencies in `requirements.txt`, completing the aforementioned steps,  the updates are pushed to the GitHub repository. This triggers the automatic generation and upload of Docker images directly to Docker Hub. You can access these Docker images here: [Docker images](https://hub.docker.com/repository/docker/arunp77/job_market/general). This streamlined process ensures that all files are kept up-to-date in the GitHub repository, while Docker images are seamlessly created.
 
-6. In the `ci.yml` file, we also need to add the  following code snippet, to  access the Docker credentials and then create the docker images and push it to Docker HUb directly. Inside the `jobs` and steps:
+6. In the `ci.yml` the following code snippet is added to enable access to Docker credentials and subsequently create and push Docker images to Docker Hub. The snippet is placed inside the `jobs` and steps::
    
    ```yaml
    - name: Login to Docker Hub
@@ -47,7 +47,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
          docker push arunp77/job_market:latest
    ```
 
-    It will triggers on pushes to the `main` branch. It checks out the repository. It logs in to Docker Hub using secrets for your Docker Hub username and password. It builds the Docker image using the Dockerfile in the repository's root directory. It pushes the built Docker image to the Docker Hub repository.
+    This workflow triggers on pushes to the `main` branch, checks out the repository, logs in to Docker Hub using secrets for the Docker Hub username and password, builds the Docker image using the Dockerfile in the repository's root directory, and finally, pushes the built Docker image to the Docker Hub repository.
 
 7. **Creating a docker image directly into the Docker hub**:  
    - To build the docker image, navigate to the root directory of the project in the terminal and run
