@@ -79,23 +79,34 @@ The project is divided into the following stages and sub-stages
 ## Project structure:
 
 ```
-Job-Market-Data-Engineering-Project/
+Job-Market-project/
 │
-├── .env                                      # to save the APIs secret keys and are ignored before pushing the files to GitHub via .gitignore
+├── .env                                         # to save the APIs secret keys and are ignored before pushing the files to GitHub via .gitignore
 ├── .github/
-│   └── workflows/                            # Contains all the ci-cd yml and the Issue/bug files 
-│       └── ci.yml                            # GitHub Actions workflow file
-│
+│   └── workflows/                               # Contains all the ci-cd yml and the Issue/bug files 
+│       └── ci.yml                               # GitHub Actions workflow file
+|── images /
+│       └── (all image files in the directory)
 ├── scripts/
 │   ├── web_scraping/
-│   │   ├── scraping_script.py                # This could be `.ipynb` file
-│   │   └── requirements.txt                  # Depednent files
+│   │   ├── adjurna.py                           # Adjurna python file to extract data using API
+│   │   ├── muse.py                              # Muse python file to extract data using API
+│   │   ├── ss.py                                # Stepstone python file to extract 
+│   │   └── requirements.txt                     # Dependent files
 │   └── etl/
-│       └── etl_script.py                     # The etl python file
+│       └── etl_script.py                        # The etl python file
 │
 ├── data/
 │   ├── scraped_data/
-│   │   └── (empty folder for storing scraped data)
+│   │   └── ajurna                               # Adjurna data
+│   │          └── ajurna_Json/ajurna_data.Json
+│   │          └── ajurna_csv/ajurna_data.csv
+│   │   └── muse/                                # Muse data
+│   │          └── muse_Json/muse_data.Json
+│   │          └── muse_csv/muse_data.csv
+│   │   └── ss/                                  # Stepstone data
+│   │          └── ss_Json/muse_data.Json
+│   │          └── ss_csv/muse_data.csv
 │   └── processed_data/
 │       └── (empty folder for storing processed data)
 │
