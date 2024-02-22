@@ -12,17 +12,18 @@ def clean_data_and_save(input_path, output_path):
     os.makedirs(output_path, exist_ok=True)
     
     # Save processed data to CSV
-    cleaned_df.to_csv(os.path.join(output_path, os.path.basename(input_path)), index=False)
-    print(f"Processed data saved to {output_path}")
+    output_file_path = os.path.join(output_path, os.path.basename(input_path))
+    cleaned_df.to_csv(output_file_path, index=False)
+    print(f"Processed data saved to {output_file_path}")
 
 def main():
     # Paths to input CSV files
-    ajurna_input_path = 'data/scraped_data/ajurna/ajurna_csv/adzuna_scrapped_data.csv'
-    muse_input_path = 'data/scraped_data/muse/muse_csv/muse_scrapped_data.csv'
+    ajurna_input_path = '../../data/scraped_data/ajurna/csv/adzuna_scrapped_data.csv'
+    muse_input_path = '../../data/scraped_data/muse/csv/muse_scrapped_data.csv'
     
     # Paths to output folders
-    ajurna_output_path = 'data/processed_data/adjurna_processed_data'
-    muse_output_path = 'data/processed_data/muse_processed_data'
+    ajurna_output_path = '../../data/processed_data/adjurna_processed_data'
+    muse_output_path = '../../data/processed_data/muse_processed_data'
     
     # Clean and save data
     clean_data_and_save(ajurna_input_path, ajurna_output_path)
