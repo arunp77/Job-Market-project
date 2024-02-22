@@ -45,6 +45,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
       run: docker push arunp77/job_market:latest
    ```
 
+    It will triggers on pushes to the `main` branch. It checks out the repository. It logs in to Docker Hub using secrets for your Docker Hub username and password. It builds the Docker image using the Dockerfile in the repository's root directory. It pushes the built Docker image to the Docker Hub repository.
 
 7. **Creating a docker image directly into the Docker hub**:  
    - To build the docker image, navigate to the root directory of the project in the terminal and run
