@@ -136,6 +136,7 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
 4. For the contributions, go to [Contribution guidelines](Contribution-guidelines.md)
 
 ## Contributors
+This project is a group effort and would not have been possible without the help of these contributors:
 
 - [Arun Kumar Pandey](https://github.com/arunp77)
   - [Email to Arun](arunp77@gmail.com)
@@ -143,7 +144,8 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
   - [Email to Brindha](brindha311@gmail.com)
 - [Khushboo Goyal](https://github.com/khushboo026)
   - [Email to Khusboo](khushboo026@gmail.com)
-- [Vincent](https://github.com/AtoutPillard)
+
+- **Cohort Leader:** [Vincent](https://github.com/AtoutPillard)
 
 ## Feedback and Contributions
 
