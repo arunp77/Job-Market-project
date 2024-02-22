@@ -29,7 +29,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 
 5. After including the Python dependencies in `requirements.txt`, completing the aforementioned steps,  the updates are pushed to the GitHub repository. This triggers the automatic generation and upload of Docker images directly to Docker Hub. You can access these Docker images here: [Docker images](https://hub.docker.com/repository/docker/arunp77/job_market/general). This streamlined process ensures that all files are kept up-to-date in the GitHub repository, while Docker images are seamlessly created.
 
-6. In the `ci.yml` the following code snippet is added to enable access to Docker credentials and subsequently create and push Docker images to Docker Hub. The snippet is placed inside the `jobs` and steps::
+6. In the `ci.yml` the following code snippet is added to enable access to Docker credentials and subsequently create and push Docker images to Docker Hub. The snippet is placed inside the `jobs` and steps:
    
    ```yaml
    - name: Login to Docker Hub
@@ -47,7 +47,9 @@ Summary of the steps that one can take to create a Docker image  and integrate i
          docker push arunp77/job_market:latest
    ```
 
-    This workflow triggers on pushes to the `main` branch, checks out the repository, logs in to Docker Hub using secrets for the Docker Hub username and password, builds the Docker image using the Dockerfile in the repository's root directory, and finally, pushes the built Docker image to the Docker Hub repository.
+    This workflow triggers on pushes to the `main` branch, checks out the repository, logs in to Docker Hub using secrets for the Docker Hub username and password, builds the Docker image using the Dockerfile in the repository's root directory, and finally, pushes the built Docker image to the Docker Hub repository. 
+
+    &emsp; **Note:** If you use tag 'Khushboo' or 'Brindha' in place of 'latest', it will create a new image with your tag.
 
 7. **Creating a docker image directly into the Docker hub**:  
    - To build the docker image, navigate to the root directory of the project in the terminal and run
