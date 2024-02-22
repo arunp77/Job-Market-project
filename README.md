@@ -118,6 +118,10 @@ Job-Market-project/
     └──  UserStories.md
 ```
 
+## Docker Images
+
+We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment.
+
 ## Setup Instructions
 
 1. Clone the repository:
@@ -129,7 +133,7 @@ Job-Market-project/
    cd Job-Market-Project
    ```
 3. Follow the instructions in each stage's folder to execute the corresponding tasks.
-4. For the contributions, go to [COntribution guidelines](Contribution-guidelines.md)
+4. For the contributions, go to [Contribution guidelines](Contribution-guidelines.md)
 
 ## Contributors
 
