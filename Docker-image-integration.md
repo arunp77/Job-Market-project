@@ -21,41 +21,10 @@ Summary of the steps that one can take to create a Docker image  and integrate i
     - `COPY . /app`: This line copies the contents of the current directory  (where the Dockerfile is located) into `/app` directory inside the container. Here `.` represents the current directory, and `/app` is the destination directory inside the container. 
     -  `RUN pip install --no-cache-dir -r requirements.txt`: this line install all the dependencies specified in the `requirements.txt` file using `pip` where pip will not cache downloaded packages, which save disk space in the resulting Docker image.
     - `CMD ["python", "scripts/etl/etl_script.py"]`: line specifies the default command to run when container starts. It runs the python script `etl_scripts.py` relative to the working directory `/app`. This command will be executed automatically when a container based on the image is launched, unless overridden by specifying a different command at runtime. (Later we will create a `Application` with `setup.py` in the home directory where  we will call all functions).
+
 |                                                       Note                                                            |
 |-----------------------------------------------------------------------------------------------------------------------|
-| Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}` syntax. When secrets |
-| are used in a workflow, their values are masked in the logs to prevent accidental exposure.                           |
+| Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`                      |
+| syntax. When secrets are used in a workflow, their values are masked in the logs to prevent accidental exposure.      |
 
 5. 
-Job-Market-Data-Engineering-Project/
-│
-├── .env                                      # to save the APIs secret keys and are ignored before pushing the files to GitHub via .gitignore
-├── .github/
-│   └── workflows/                            # Contains all the ci-cd yml and the Issue/bug files 
-│       └── ci.yml                            # GitHub Actions workflow file
-|── images /
-├── scripts/
-│   ├── web_scraping/
-│   │   ├── adjurna.py
-│   │   ├── muse.py  
-│   │   └── requirements.txt                  # Depednent files
-│   └── etl/
-│       └── etl_script.py                     # The etl python file
-│
-├── data/
-│   ├── scraped_data/
-│   │   └── ajurna
-│   │          └── ajurna_Json/ajurna_data.Json
-│   │          └── ajurna_csv/ajurna_data.csv
-│   │   └── muse/
-│   │          └── muse_Json/muse_data.Json
-│   │          └── muse_csv/muse_data.csv
-│   └── processed_data/
-│       └── (empty folder for storing processed data)
-│
-└── documentation/
-    └── README.md
-    └──  ProjectPlan.md
-    └──  LICENSE.md
-    └──  Contribution-guidelines.md
-    └──  UserStories.md
