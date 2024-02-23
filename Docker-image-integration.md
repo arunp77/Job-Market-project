@@ -8,7 +8,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 - **Dockerfile:** This file contains instructions for building the Docker image, including the base image, dependencies, and commands to run (discussed below).
 - **Docker access token:** To build and push Docker images, you require a valid Docker ID, and an access token (discussed below).
 
-## Steps
+## Steps to follow
 
 1. **Generate Docker Access Token:** Navigate to the account settings. Go to the "Security" section and look for the option to generate an access token (Go to `My Profile > [Edit profile] > Security > Access Tokens > New Access Token`). It will ask you Access token description. In our case, I use `Job-Market-access-token` and then gave all the read, write, delete access. Then click generate the access token. 
    <img src="images/docker-access-token.png" alt="snapshot-access-token-Docker" width=50% height=auto>
