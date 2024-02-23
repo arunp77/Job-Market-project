@@ -2,20 +2,30 @@
 
 Summary of the steps that one can take to create a Docker image  and integrate it into an existing CI/CD workflow. This guide will use GitHub Actions as the the continuous integration tool and is placed at [Github Action](https://github.com/arunp77/Job-Market-project/blob/main/.github/workflows/ci.yml).
 
+## Prerequisites
+- **Docker Installed:** Ensure that Docker is installed on your system. You can download and install Docker Desktop from the official Docker website [(https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) or [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
+- **DockerHub account:** To manage and share Docker images, you'll need a Docker Hub account. If not already done, sign up for an account at [Docker Hub](https://hub.docker.com/signup) by following the on-screen instructions. Choose the Personal version and verify your account creation via the email you registered with. If you already have an account, simply log in to Docker Hub.
+- **Dockerfile:** This file contains instructions for building the Docker image, including the base image, dependencies, and commands to run (discussed below).
+- **Docker access token:** To build and push Docker images, you require a valid Docker ID, and an access token (discussed below).
+
 ## Steps
 
-1. **DockerHub account creation:** Create a account at [Docker Hub](https://hub.docker.com/signup). Follow on screen descriptions. Choose Personal version. Verfiy the account creation at the email you registered for. If you have already created our account, login to the DOcker Hub account. 
-2. **Generate Docker Access Token:** Navigate to the account settings. Go to the "Security" section and look for the option to generate an access token (Go to `My Profile > [Edit profile] > Security > Access Tokens > New Access Token`). It will ask you Access token description. In our case, I use `Job-Market-access-token` and then gave all the read, write, delete access. Then click generate the access token. 
+1. **Generate Docker Access Token:** Navigate to the account settings. Go to the "Security" section and look for the option to generate an access token (Go to `My Profile > [Edit profile] > Security > Access Tokens > New Access Token`). It will ask you Access token description. In our case, I use `Job-Market-access-token` and then gave all the read, write, delete access. Then click generate the access token. 
    <img src="images/docker-access-token.png" alt="snapshot-access-token-Docker" width=50% height=auto>
 
    you must save the token at some safe place. It will be shown just once. 
-3. **Setup GitHub Secrets:** Go to the Github repository. Next click settings tab and then 'Secrets and variables' (`setting > Secrets and variables > Actions`). Click on `New repository secret`. For the secret name, use `DOCKER_USERNAME` and for the secret value, paste your Docker Hub `username`. Repeat the above steps to add another secret named `DOCKER_PASSWORD`, using the Docker Hub access token as the secret value.
+
+2. **Setup GitHub Secrets:** Go to the Github repository. 
+   - Next click settings tab and then 'Secrets and variables' (`setting > Secrets and variables > Actions`). 
+   - Click on `New repository secret`. 
+   - For the secret name, use `DOCKER_USERNAME` and for the secret value, paste your Docker Hub `username`. 
+   - Repeat the above steps to add another secret named `DOCKER_PASSWORD`, using the Docker Hub access token as the secret value.
    
    <img src="images/Github-action.png" alt="access-token-Github" width=100% height=auto>
 
    Here the added secrets will be securely stored and accessible to the CI workflows in the `.github/workflows/ci.yml`. 
 
-4. **Add Dockerfile:** Create a `Dockerfile` in the root directory for the project. This file contains instructions for building the Docker image, including setting up the environment and dependencies and it is named as [Dockerfile](Dockerfile) in the root directory. Let's explain the `Dockerfile` little bit:
+3. **Add Dockerfile:** Create a `Dockerfile` in the root directory for the project. This file contains instructions for building the Docker image, including setting up the environment and dependencies and it is named as [Dockerfile](Dockerfile) in the root directory. Let's explain the `Dockerfile` little bit:
     - `FROM python:3.10`: This will  create a new image based on Python version 3.10, which is currently the latest stable.
     - `WORKDIR /app`: This  sets the working directory of our container to `/app`, which is where we’ll put our application.
     - `COPY . /app`: This line copies the contents of the current directory  (where the Dockerfile is located) into `/app` directory inside the container. Here `.` represents the current directory, and `/app` is the destination directory inside the container. 
@@ -60,7 +70,7 @@ Summary of the steps that one can take to create a Docker image  and integrate i
 
    <img src="images/docker-arunp77.png" alt="access-token-Github" width=95% height=auto>
 
-   It is to be  noted that, if there are any changes in this file then a new image should be built using above command. Also you should remember that you may be asked to install the [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
+   It is to be  noted that, if there are any changes in this file then a new image should be built using above command.
 
    - To push the image:
 
