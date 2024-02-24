@@ -22,28 +22,28 @@ def remove_time_from_timestamp_for_adzuna(timestamp):
     formatted_date = timestamp.strftime('%Y-%m-%d')
     return formatted_date
 
-def translate_csv(input_csv, output_csv,columns_to_translate, timestamp_conversion, date_column):
+def translate_csv(input_csv, output_csv,columns_to_translate=None, timestamp_conversion=None, date_column=None):
     # Read the CSV file
     df = pd.read_csv(input_csv)
+
+    df.replace("Unknown", pd.NA, inplace=True)
 
     #dropping the null fields in the file 
     df_null_dropped = df.dropna()  
 
    
     # Translate specified columns
-    for column in columns_to_translate:
-        print("column", column)
-        if column in df_null_dropped.columns:
-            try:
-                for row in df_null_dropped[column]:
-                    translated_column = translate_to_english(row)
-                    row = translated_column
-            except OSError as e:
-                print(f"Error translating column '{column}': {e}")
+    if columns_to_translate is not None:
+        for column in columns_to_translate:
+            if column in df_null_dropped.columns:
+                try:
+                    df_null_dropped.loc[:, column] = df_null_dropped[column].apply(translate_to_english)
+                except OSError as e:
+                    print(f"Error translating column '{column}': {e}")
 
     # Changing the timestamp : removing time from the datetimestamp
-    df_null_dropped[date_column] = df_null_dropped[date_column].apply(timestamp_conversion)
-
+    if date_column and timestamp_conversion:
+        df_null_dropped.loc[:, date_column] = df_null_dropped[date_column].apply(timestamp_conversion)
     # Create output folder if it doesn't exist
     os.makedirs(output_csv, exist_ok=True)
     
@@ -51,22 +51,30 @@ def translate_csv(input_csv, output_csv,columns_to_translate, timestamp_conversi
     output_file_path = os.path.join(output_csv, os.path.basename(input_csv))
     df_null_dropped.to_csv(output_file_path, index=False)
 
+    print(f"Data processed successfully for the file {os.path.basename(input_csv)}")
+
 
 def main():
      # Paths to input CSV files
-    ajurna_input_path = 'adzuna_scrapped_data.csv'
+    adzuna_input_path = '../../data/scraped_data/adjurna/csv/adzuna_scrapped_data.csv'
     muse_input_path = '../../data/scraped_data/muse/csv/muse_scrapped_data.csv'
+    stepstone_input_path = '../../data/scraped_data/ss/ss_datascience_germany_20240221.csv'
     
     # Paths to output folders
-    ajurna_output_path = 'adjurna_processed_data'
+    adzuna_output_path = '../../data/processed_data/adjurna_processed_data'
     muse_output_path = '../../data/processed_data/muse_processed_data'
+    stepstone_output_path = '../../data/processed_data/ss_processed_data'
 
-    columns_to_translate = ['title', 'category','source','description']
+    columns_to_translate_adzuna = ['title', 'category','source','description']
     columns_to_translate_muse = ['Job Title']
 
+    date_variable_for_adzuna = 'job_posted'
+    date_variable_for_muse = 'Publication Date'
+
     # Clean and save data
-    translate_csv(ajurna_input_path, ajurna_output_path,columns_to_translate,remove_time_from_timestamp_for_adzuna,'job_posted')
-    translate_csv(muse_input_path, muse_output_path,columns_to_translate_muse,remove_time_from_timestamp_for_muse,'Publication Date')
+    translate_csv(adzuna_input_path, adzuna_output_path,columns_to_translate_adzuna,remove_time_from_timestamp_for_adzuna,date_variable_for_adzuna)
+    translate_csv(muse_input_path, muse_output_path,columns_to_translate_muse,remove_time_from_timestamp_for_muse,date_variable_for_muse)
+    translate_csv(stepstone_input_path, stepstone_output_path)
 
 
 if __name__ == "__main__":
