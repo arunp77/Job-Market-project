@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 
-#others
+# others VSCODE and other github files ignore
 cspell.json
 .vscode/
 .github/
