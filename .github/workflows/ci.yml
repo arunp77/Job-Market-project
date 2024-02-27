@@ -54,8 +54,4 @@ jobs:
       run: docker pull arunp77/job_market:latest
 
     - name: Deploy Docker image to production
-<<<<<<< HEAD
       run: docker run -d -p 80:80 arunp77/job_market:latest
-=======
-      run: docker run -d -p 80:80 arunp77/job_market:latest
->>>>>>> 7aaa5bd547d88eca0fed0926961f4cb95397400c
