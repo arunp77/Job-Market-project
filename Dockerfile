@@ -10,5 +10,8 @@ COPY . /app
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set the GPG key as an environment variable (optional)
+ENV GPG_KEY=$GPG_KEY
+
 # Run script or command to start your application
 CMD ["python", "scripts/etl/etl_script.py"]
