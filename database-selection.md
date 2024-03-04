@@ -16,6 +16,7 @@ Steps to launch the Elastic search and load data,
 docker-compose up -d. 
 2. open kibana in any browser using :: http://localhost:5601/
 3. To access it, open pane like,
+   
   ![image](https://github.com/arunp77/Job-Market-project/assets/154029167/02d38472-2fd6-4c39-8b0d-4de2bce58635)
 
 4. Then run the python script in scripts/database/db_connection.py to load the dataset.
@@ -35,4 +36,4 @@ docker-compose up -d.
 | - link: String                        |
 | - source: String                      |
 +---------------------------------------+
-6. The above schema will accomodate all 3 dataset. 
+7. The above schema will accomodate all 3 dataset. 
