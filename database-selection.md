@@ -1,3 +1,5 @@
+# Database: ElasticSearch
+
 Elastic search offers several advantages in job market analysis:
 
 1. **Fast Search Performance**: Elastic search is renowned for its speed and efficiency in searching and retrieving data. In the context of job market analysis, this means users can quickly search through large volumes of job listings and related data to extract valuable insights.
