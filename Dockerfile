@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run script or command to start your application
-CMD ["python", "scripts/etl/etl_script.py"]
+CMD ["python", "scripts/etl/etlscript.py"]
