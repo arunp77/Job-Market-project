@@ -3,8 +3,20 @@ from deep_translator import GoogleTranslator
 import os
 from datetime import datetime
 
+# Translation dictionary
+translation_dict = {
+    "Werkstudent": "working student",
+    "Praktikum": "internship",
+    "Teamassistenz": "team assistant",
+    "Werkstudent*in": "working student",
+}
+
 def translate_to_english(text):
     translation = GoogleTranslator(source='auto', target='en').translate(text)
+     # Replace words using the translation dictionary
+    for key, value in translation_dict.items():
+        translation = translation.replace(key, value)
+
     return translation
 
 
@@ -67,6 +79,7 @@ def main():
 
     columns_to_translate_adzuna = ['title', 'category','source','description']
     columns_to_translate_muse = ['Job Title']
+    columns_to_translate_stepstone = ['title']
 
     date_variable_for_adzuna = 'job_posted'
     date_variable_for_muse = 'Publication Date'
@@ -74,7 +87,7 @@ def main():
     # Clean and save data
     translate_csv(adzuna_input_path, adzuna_output_path,columns_to_translate_adzuna,remove_time_from_timestamp_for_adzuna,date_variable_for_adzuna)
     translate_csv(muse_input_path, muse_output_path,columns_to_translate_muse,remove_time_from_timestamp_for_muse,date_variable_for_muse)
-    translate_csv(stepstone_input_path, stepstone_output_path)
+    translate_csv(stepstone_input_path, stepstone_output_path,columns_to_translate_stepstone)
 
 
 if __name__ == "__main__":
