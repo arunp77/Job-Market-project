@@ -7,5 +7,5 @@ matplotlib
 seaborn
 elasticsearch
 deep_translator
-selenium.webdriver
+selenium
 bs4
