@@ -5,3 +5,7 @@ scipy
 statsmodels
 matplotlib
 seaborn
+elasticsearch
+deep_translator
+selenium.webdriver
+bs4
