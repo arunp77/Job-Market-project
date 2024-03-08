@@ -7,8 +7,8 @@ This project aims to showcase skills in data engineering by gathering and analyz
 ## Prerequisite
 - **WebScrapping:** BeautifulSoup
 - Python -3.10.x
-- **SQL/NoSQL:** MySQL DBMS, MongoDB DBMS
-- Dash, ElasticSearch
+- **NoSQL:** Elastic Search 
+- Dash, Elastic Search
 - Docker Compose: v2.15.1
 - Docker
 - Airflow
@@ -23,7 +23,7 @@ The project is divided into the following stages and sub-stages
 - **Sources**:
   - [The Muse API](https://www.themuse.com/developers/api/v2)
   - [Adzuna API](https://developer.adzuna.com/)
-  - Web Scraping from platforms like Welcome To The Jungle, LinkedIn, etc.
+  - Web Scraping from stepstone using selenium and beautifulsoup.
 - **Tools**:
   - Requests library for API interaction.
   - Postman tool (for testing)
@@ -32,12 +32,10 @@ The project is divided into the following stages and sub-stages
 ### 2. Data Modeling
 
 - **Objective**: Create a data lake or databases to store collected data.
-- **Approaches**: Either of the databases
-  - SQL Database
-  - NoSQL Database (e.g., MongoDB)
+- **Approaches**: 
+  - NoSQL Database (Elastic search)
 - **Tools**:
-  - SQL (e.g., Hbase)
-  - NoSQL (e.g., MongoDB)
+  - Selenium
   - Elasticsearch
   - UML Diagram for data model visualization (Justification for choice of DBMS(es)).
 
