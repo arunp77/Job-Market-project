@@ -181,7 +181,7 @@ def handler():
 
 
     except Exception as e:
-        logging.error(f"An unexpected error occurred in the main block: {e}")
+        print(f"An unexpected error occurred in the main block: {e}")
         raise
 
 # call mainfuntion handler to execute
