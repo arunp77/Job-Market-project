@@ -38,30 +38,25 @@ def translate_csv(input_csv, output_csv,columns_to_translate=None, timestamp_con
     # Read the CSV file
     df = pd.read_csv(input_csv)
 
-    df.replace("Unknown", pd.NA, inplace=True)
-
-    #dropping the null fields in the file 
-    df_null_dropped = df.dropna()  
-
    
     # Translate specified columns
     if columns_to_translate is not None:
         for column in columns_to_translate:
-            if column in df_null_dropped.columns:
+            if column in df.columns:
                 try:
-                    df_null_dropped.loc[:, column] = df_null_dropped[column].apply(translate_to_english)
+                    df.loc[:, column] = df[column].apply(translate_to_english)
                 except OSError as e:
                     print(f"Error translating column '{column}': {e}")
 
     # Changing the timestamp : removing time from the datetimestamp
     if date_column and timestamp_conversion:
-        df_null_dropped.loc[:, date_column] = df_null_dropped[date_column].apply(timestamp_conversion)
+        df.loc[:, date_column] = df[date_column].apply(timestamp_conversion)
     # Create output folder if it doesn't exist
     os.makedirs(output_csv, exist_ok=True)
     
     # Save the translated DataFrame to a new CSV file
     output_file_path = os.path.join(output_csv, os.path.basename(input_csv))
-    df_null_dropped.to_csv(output_file_path, index=False)
+    df.to_csv(output_file_path, index=False)
 
     print(f"Data processed successfully for the file {os.path.basename(input_csv)}")
 
