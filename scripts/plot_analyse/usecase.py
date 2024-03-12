@@ -8,11 +8,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import time
+import plotly.graph_objs as go
+from plotly.offline import plot
 
 
 #create the db connection
-def db_connection():
-    es = Elasticsearch("http://localhost:9200")
+def db_connection(host,port):
+    es = Elasticsearch(f"http://{host}:{port}")
     return es
 
 
@@ -143,24 +145,24 @@ def computation(usecase, df):
 """
 def plot_trend(result_df_1,result_df_2):
     # Plot trend of job postings over time
-    plt.figure(figsize=(15, 15))
+    plt.figure(figsize=(25, 10))
     # subplot 1
-    plt.subplot(211)
-    plt.plot(result_df_1['job_posted'], result_df_1['data_analyst_count'], label='data_analyst_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['data_engineer_count'], label='data_engineer_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['data_scientist_count'], label='data_scientist_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['machine_learning_count'], label='machine_learning_count')
+    plt.subplot(121)
+    plt.plot(result_df_1['job_posted'], result_df_1['data_analyst_count'], label='Data Analyst')
+    plt.plot(result_df_1['job_posted'], result_df_1['data_engineer_count'], label='Data Engineer')
+    plt.plot(result_df_1['job_posted'], result_df_1['data_scientist_count'], label='Data Scientist')
+    plt.plot(result_df_1['job_posted'], result_df_1['machine_learning_count'], label='Machine Learning')
     plt.xlim(result_df_1['job_posted'].min(), result_df_1['job_posted'].max())
-    plt.ylim(result_df_1['data_engineer_count'].min(), result_df_1['data_engineer_count'].max())
+    plt.ylim(result_df_1['data_engineer_count'].min(), 30)
     plt.xlabel('Date')
     plt.ylabel('Count of Job')
     plt.title('Trend of Job Postings Over Time')
     plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
     plt.legend()
-    plt.grid(True)
+    #plt.grid(True)
 
     # subplot 2
-    plt.subplot(212)
+    plt.subplot(122)
     # Create pie chart to get the highest job opening for 10 companies
     plt.pie(result_df_2['job_counts'], labels=result_df_2['company'], autopct='%1.1f%%', startangle=140)
     plt.title('Job Counts by Company')
@@ -169,12 +171,55 @@ def plot_trend(result_df_1,result_df_2):
 
     return plt
 
+
+def plot_trend_interactive(result_df_1, result_df_2):
+    # creating the time series plot
+    fig = go.Figure()
+
+    # Adding the traces for each job category
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_analyst_count'], mode='lines', name='Data Analyst'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_engineer_count'], mode='lines', name='Data Engineer'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_scientist_count'], mode='lines', name='Data Scientist'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['machine_learning_count'], mode='lines', name='Machine Learning'))
+    x_min_limit = result_df_1['job_posted'].min()
+    x_max_limit = result_df_1['job_posted'].max()
+    y_min_limit = 0
+    y_max_limit = 30
+    # Updating the layout for time series
+    fig.update_layout(
+        title='Trend of Job Postings Over Time',
+        xaxis_title='Date',
+        yaxis_title='Count of Job',
+        xaxis=dict(tickangle=-45, range=[x_min_limit, x_max_limit]),
+        yaxis=dict(range=[y_min_limit, y_max_limit]),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        margin=dict(l=20, r=20, t=60, b=20),
+        hovermode='x unified'
+    )
+
+
+    # Pie plot creating now
+    fig_pie = go.Figure()
+
+    # Adding pie chart for top 10 companies
+    fig_pie.add_trace(go.Pie(labels=result_df_2['company'], values=result_df_2['job_counts'], hole=0.3))
+
+    # Update layout for pie plot
+    fig_pie.update_layout(
+        title='Job Counts by Company'
+    )
+
+    return fig, fig_pie
+
+
 #main funtions
 def handler():
 
     try:
+        host  = "localhost"
+        port = "9200"
         # connect to DB
-        es = db_connection()
+        es = db_connection(host,port)
         # usecase 1 execution
         query = usecase(usecase=1)
         # Execute the search query and get the response
@@ -204,6 +249,13 @@ def handler():
         plot_dia = plot_trend(result_df_1,result_df_2)
         # save plot in a file path
         plot_dia.savefig(plot_file)
+
+        # get interactive plot results and save in html files
+        plot_dia_i1,plot_dia_i2 = plot_trend_interactive(result_df_1,result_df_2)
+        plot_file = os.path.join(plt_file_path, f"job_analyse_tend_{unix_timestamp}.html")
+        plot_dia_i1.write_html(plot_file)
+        plot_file = os.path.join(plt_file_path, f"job_analyse_max_job_{unix_timestamp}.html")
+        plot_dia_i2.write_html(plot_file)
 
     except Exception as e:
         print(f"An unexpected error occurred in the main block: {e}")
