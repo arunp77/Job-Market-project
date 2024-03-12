@@ -8,6 +8,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import time
+import plotly.graph_objs as go
+from plotly.offline import plot
 
 
 #create the db connection
@@ -151,7 +153,7 @@ def plot_trend(result_df_1,result_df_2):
     plt.plot(result_df_1['job_posted'], result_df_1['data_scientist_count'], label='Data Scientist')
     plt.plot(result_df_1['job_posted'], result_df_1['machine_learning_count'], label='Machine Learning')
     plt.xlim(result_df_1['job_posted'].min(), result_df_1['job_posted'].max())
-    plt.ylim(result_df_1['data_engineer_count'].min(), 20)
+    plt.ylim(result_df_1['data_engineer_count'].min(), 30)
     plt.xlabel('Date')
     plt.ylabel('Count of Job')
     plt.title('Trend of Job Postings Over Time')
@@ -168,6 +170,47 @@ def plot_trend(result_df_1,result_df_2):
     plt.axis('equal')
 
     return plt
+
+
+def plot_trend_interactive(result_df_1, result_df_2):
+    # creating the time series plot
+    fig = go.Figure()
+
+    # Adding the traces for each job category
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_analyst_count'], mode='lines', name='Data Analyst'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_engineer_count'], mode='lines', name='Data Engineer'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['data_scientist_count'], mode='lines', name='Data Scientist'))
+    fig.add_trace(go.Scatter(x=result_df_1['job_posted'], y=result_df_1['machine_learning_count'], mode='lines', name='Machine Learning'))
+    x_min_limit = result_df_1['job_posted'].min()
+    x_max_limit = result_df_1['job_posted'].max()
+    y_min_limit = 0
+    y_max_limit = 30
+    # Updating the layout for time series
+    fig.update_layout(
+        title='Trend of Job Postings Over Time',
+        xaxis_title='Date',
+        yaxis_title='Count of Job',
+        xaxis=dict(tickangle=-45, range=[x_min_limit, x_max_limit]),
+        yaxis=dict(range=[y_min_limit, y_max_limit]),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        margin=dict(l=20, r=20, t=60, b=20),
+        hovermode='x unified'
+    )
+
+
+    # Pie plot creating now
+    fig_pie = go.Figure()
+
+    # Adding pie chart for top 10 companies
+    fig_pie.add_trace(go.Pie(labels=result_df_2['company'], values=result_df_2['job_counts'], hole=0.3))
+
+    # Update layout for pie plot
+    fig_pie.update_layout(
+        title='Job Counts by Company'
+    )
+
+    return fig, fig_pie
+
 
 #main funtions
 def handler():
@@ -206,6 +249,13 @@ def handler():
         plot_dia = plot_trend(result_df_1,result_df_2)
         # save plot in a file path
         plot_dia.savefig(plot_file)
+
+        # get interactive plot results and save in html files
+        plot_dia_i1,plot_dia_i2 = plot_trend_interactive(result_df_1,result_df_2)
+        plot_file = os.path.join(plt_file_path, f"job_analyse_tend_{unix_timestamp}.html")
+        plot_dia_i1.write_html(plot_file)
+        plot_file = os.path.join(plt_file_path, f"job_analyse_max_job_{unix_timestamp}.html")
+        plot_dia_i2.write_html(plot_file)
 
     except Exception as e:
         print(f"An unexpected error occurred in the main block: {e}")
