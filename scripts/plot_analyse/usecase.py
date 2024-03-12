@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import os
 import time
 import plotly.graph_objs as go
+import plotly.express as px
 from plotly.offline import plot
 
 
@@ -174,6 +175,9 @@ def plot_trend(result_df_1,result_df_2):
 
 def plot_trend_interactive(result_df_1, result_df_2):
     # creating the time series plot
+    result_df_1 = result_df_1.sort_values("job_posted").reset_index(drop=True)
+    #result_df_1['job_posted'] = pd.to_datetime(result_df_1['job_posted'])
+    print(result_df_1['job_posted'])
     fig = go.Figure()
 
     # Adding the traces for each job category
