@@ -11,8 +11,8 @@ import time
 
 
 #create the db connection
-def db_connection():
-    es = Elasticsearch("http://localhost:9200")
+def db_connection(host,port):
+    es = Elasticsearch(f"http://{host}:{port}")
     return es
 
 
@@ -143,24 +143,24 @@ def computation(usecase, df):
 """
 def plot_trend(result_df_1,result_df_2):
     # Plot trend of job postings over time
-    plt.figure(figsize=(15, 15))
+    plt.figure(figsize=(25, 10))
     # subplot 1
-    plt.subplot(211)
-    plt.plot(result_df_1['job_posted'], result_df_1['data_analyst_count'], label='data_analyst_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['data_engineer_count'], label='data_engineer_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['data_scientist_count'], label='data_scientist_count')
-    plt.plot(result_df_1['job_posted'], result_df_1['machine_learning_count'], label='machine_learning_count')
+    plt.subplot(121)
+    plt.plot(result_df_1['job_posted'], result_df_1['data_analyst_count'], label='Data Analyst')
+    plt.plot(result_df_1['job_posted'], result_df_1['data_engineer_count'], label='Data Engineer')
+    plt.plot(result_df_1['job_posted'], result_df_1['data_scientist_count'], label='Data Scientist')
+    plt.plot(result_df_1['job_posted'], result_df_1['machine_learning_count'], label='Machine Learning')
     plt.xlim(result_df_1['job_posted'].min(), result_df_1['job_posted'].max())
-    plt.ylim(result_df_1['data_engineer_count'].min(), result_df_1['data_engineer_count'].max())
+    plt.ylim(result_df_1['data_engineer_count'].min(), 20)
     plt.xlabel('Date')
     plt.ylabel('Count of Job')
     plt.title('Trend of Job Postings Over Time')
     plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
     plt.legend()
-    plt.grid(True)
+    #plt.grid(True)
 
     # subplot 2
-    plt.subplot(212)
+    plt.subplot(122)
     # Create pie chart to get the highest job opening for 10 companies
     plt.pie(result_df_2['job_counts'], labels=result_df_2['company'], autopct='%1.1f%%', startangle=140)
     plt.title('Job Counts by Company')
@@ -173,8 +173,10 @@ def plot_trend(result_df_1,result_df_2):
 def handler():
 
     try:
+        host  = "localhost"
+        port = "9200"
         # connect to DB
-        es = db_connection()
+        es = db_connection(host,port)
         # usecase 1 execution
         query = usecase(usecase=1)
         # Execute the search query and get the response
