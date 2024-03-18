@@ -1,4 +1,4 @@
-pandas==1.3.3
+pandas
 scikit-learn
 numpy
 scipy
@@ -9,5 +9,5 @@ elasticsearch
 deep_translator
 selenium
 bs4
-fastapi==0.68.0
+fastapi
 uvicorn==0.15.0
