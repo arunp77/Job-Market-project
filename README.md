@@ -92,8 +92,12 @@ Job-Market-project/
 │   │   ├── ss.py                                # Stepstone python file to extract 
 │   │   └── requirements.txt                     # Dependent files
 │   └── etl/
-│       └── etl_script.py                        # The etl python file
-│
+│   │   └── etlscript.py                        # The etl python file
+│   └── database/
+│   │   └── db_connection.py
+│   └── plot_analysis/
+│        └── uscase.py
+│  
 ├── data/
 │   ├── scraped_data/
 │   │   └── ajurna                               # Adjurna data
