@@ -24,7 +24,12 @@ def read_root():
 
 @api.get("/load_data")
 def load_data():
-    """Endpoint to load data into Elasticsearch."""
+    """
+    Endpoint to load data into Elasticsearch.
+
+    Returns:
+        dict: A dictionary containing the result of loading data into Elasticsearch.
+    """
     try:
         # Get the absolute path of the current directory
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -46,10 +51,14 @@ def load_data():
         # Return a more specific error message
         return {"error": "Failed to load data into Elasticsearch."}
     
-    
 @api.get("/usecase1")
 def get_usecase1():
-    """Endpoint to execute and retrieve results for use case 1."""
+    """
+    Endpoint to execute and retrieve results for use case 1.
+
+    Returns:
+        dict: A dictionary containing the result of use case 1.
+    """
     try:
         host = "localhost"
         port = "9200"
@@ -73,7 +82,12 @@ def get_usecase1():
 
 @api.get("/usecase2")
 def get_usecase2():
-    """Endpoint to execute and retrieve results for use case 2."""
+    """
+    Endpoint to execute and retrieve results for use case 2.
+
+    Returns:
+        dict: A dictionary containing the result of use case 2.
+    """
     try:
         host = "localhost"
         port = "9200"
