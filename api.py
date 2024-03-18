@@ -33,13 +33,40 @@ def load_muse_dataset():
 
 @app.get("/load_adzuna_dataset")
 def load_adzuna_dataset():
-    # Similar implementation for loading Adzuna dataset
-    pass
+    try:
+        df = pd.read_csv("data/processed_data/adzuna_processed_data.csv")
+        for _, row in df.iterrows():
+            doc = {
+                "title": row["title"],
+                "company": row["company"],
+                "location": row["location"],
+                "job_posted": row["job_posted"],
+                "description": row["description"],
+                "link": row["link"],
+                "source": "adzuna"
+            }
+            es.index(index=index_name, body=doc)
+        return {"message": "Adzuna dataset loaded successfully"}
+    except Exception as e:
+        return {"error": str(e)}
 
-@app.get("/load_stepstone_dataset")
-def load_stepstone_dataset():
-    # Similar implementation for loading Stepstone dataset
-    pass
+@app.get("/load_adzuna_dataset")
+def load_adzuna_dataset():
+    try:
+        df = pd.read_csv("data/processed_data/adjurna_processed_data.csv")
+        for _, row in df.iterrows():
+            doc = {
+                "title": row["title"],
+                "company": row["company"],
+                "location": row["location"],
+                "job_posted": row["job_posted"],
+                "link": row["link"],
+                "source": "adzuna"
+            }
+            es.index(index=index_name, body=doc)
+        return {"message": "Adzuna dataset loaded successfully"}
+    except Exception as e:
+        return {"error": str(e)}
 
 if __name__ == "__main__":
     import uvicorn
