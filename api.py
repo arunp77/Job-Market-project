@@ -15,6 +15,13 @@ api = FastAPI(
 
 # Create a global Elasticsearch connection
 es = db_connection()
+"""_summary_
+Elasticsearch serves as the data store and querying engine for our use case endpoints 
+(get_usecase1 and get_usecase2). so keeping it here.
+Returns:
+    _type_: _description_
+"""
+
 index_name = "job_list"
 
 @api.get("/")
