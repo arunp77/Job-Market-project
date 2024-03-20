@@ -6,12 +6,13 @@ This project aims to showcase skills in data engineering by gathering and analyz
 
 ## Prerequisite
 - **WebScrapping:** BeautifulSoup
+- Selenium
 - Python -3.10.x
 - **NoSQL:** Elastic Search 
-- Dash, Elastic Search
+- Elastic Search
 - Docker Compose: v2.15.1
 - Docker
-- Airflow
+- fastAPI
 
 ## Project Stages
 
