@@ -61,7 +61,7 @@ The project is divided into the following stages and sub-stages
 - **Objective**: Deploy project components and create APIs for data retrieval.
 - **Components**:
   - API using FastAPI or Flask.
-  - Docker containers for each component.
+  - Docker containers for each component. Steps for the dockerization are available in [Docker-image file](Docker-image-integration.md).
 - **Tools**:
   - FastAPI or Flask for API development.
   - Docker for containerization.
