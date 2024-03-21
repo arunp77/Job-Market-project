@@ -1,18 +1,18 @@
 # InsightfulRecruit: Unveiling the Job Market Landscape through Data Engineering
 
+[![GitHub repo size](https://img.shields.io/github/repo-size/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project) [![Top Language](https://img.shields.io/github/languages/top/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project)
+
+ 
 ## Overview
 
 This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.
 
 ## Prerequisite
-- **WebScrapping:** BeautifulSoup
-- Selenium
-- Python -3.10.x
-- **NoSQL:** Elastic Search 
-- Elastic Search
-- Docker Compose: v2.15.1
-- Docker
-- fastAPI
+- **WebScrapping:** BeautifulSoup, Selenium
+- **Python:** -3.10.x
+- **NoSQL:** ElasticSearch 
+- **Docker Compose:** Docker v2.15.1
+- **API:** fastAPI
 
 ## Project Stages
 
@@ -32,19 +32,18 @@ The project is divided into the following stages and sub-stages
 
 ### 2. Data Modeling
 
-- **Objective**: Create a data lake or databases to store collected data.
+- **Objective**: Create a data lake or database to store collected data.
 - **Approaches**: 
   - NoSQL Database (Elastic search)
 - **Tools**:
-  - Selenium
   - Elasticsearch
-  - UML Diagram for data model visualization (Justification for choice of DBMS(es)).
+  - UML Diagram for data model visualization.
 
 ### 3. Data Consumption
 
 <details>
 <summary>Click to expand</summary>
-  We need to fix the following question: "Find the job of your dreams: location; technologies; sector; level (senior etc...)"
+  In our present scenario, we get data from 3 sources, MUSE API, Adjurna API, and Stepstone.
 </details>
 
 - **Objective**: Analyze the collected data to derive insights about the job market.
@@ -68,7 +67,7 @@ The project is divided into the following stages and sub-stages
   - Docker for containerization.
   - Docker Compose for container orchestration.
 
-### 5. Automation of Flow (Optional)
+### 5. Automation of Flow (future work)
 
 - **Objective**: Automate data retrieval from sources.
 - **Tools**:
@@ -136,23 +135,21 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
    cd Job-Market-Project
    ```
 3. Follow the instructions in each stage's folder to execute the corresponding tasks.
-4. For the contributions, go to [Contribution guidelines](Contribution-guidelines.md)
+
+## Launch on Binder
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
 
-- [Arun Kumar Pandey](https://github.com/arunp77)
-  - [Email to Arun](arunp77@gmail.com)
-- [Brindha Sadayappan](https://github.com/brindha311)
-  - [Email to Brindha](brindha311@gmail.com)
-- [Khushboo Goyal](https://github.com/khushboo026)
-  - [Email to Khusboo](khushboo026@gmail.com)
-
+- [Arun Kumar Pandey](https://github.com/arunp77): [Email to Arun](arunp77@gmail.com)
+- [Brindha Sadayappan](https://github.com/brindha311): [Email to Brindha](brindha311@gmail.com)
+- [Khushboo Goyal](https://github.com/khushboo026): [Email to Khusboo](khushboo026@gmail.com)
 - **Cohort Leader:** [Vincent](https://github.com/AtoutPillard)
 
 ## Feedback and Contributions
 
-Feedback and contributions are welcome! If you have any suggestions or improvements, please open an issue or create a pull request.
+Feedback and contributions are welcome! Please open an issue or create a pull request if you have any suggestions or improvements. [Contribution guidelines](Contribution-guidelines.md)
 
 ## License
 
