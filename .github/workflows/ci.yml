@@ -26,6 +26,25 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Extract and process data
+      run: |
+        python scripts/web_scraping/adjurna.py
+        python scripts/web_scraping/muse.py
+        python scripts/web_scraping/ss.py
+        python scripts/etl/etlscript.py
+
+    - name: Start Elasticsearch
+      run: |
+        docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+
+    - name: Load data into Elasticsearch
+      run: python scripts/database/db_connection.py
+
+    - name: Create FastAPI application
+      run: |
+        # Replace this command with the script/command to create the FastAPI application
+        python scripts/create_fastapi_app.py
+
     - name: Build Docker image
       run: |
         docker build -t arunp77/job_market:latest .
