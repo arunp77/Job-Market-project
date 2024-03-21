@@ -16,26 +16,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v1
 
-    - name: Install dependencies
+    - name: Set up Docker Compose
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    # - name: Extract and process data
-    #  run: |
-    #    python scripts/web_scraping/adjurna.py
-    #    python scripts/web_scraping/muse.py
-    #    python scripts/web_scraping/ss.py
-    #    python scripts/etl/etlscript.py
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
 
     - name: Start Elasticsearch
       run: |
-        docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+        docker-compose -f path/to/your/docker-compose.yaml up -d elasticsearch
 
     - name: Load data into Elasticsearch
       run: python scripts/database/db_connection.py
