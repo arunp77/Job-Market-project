@@ -80,45 +80,45 @@ The project is divided into the following stages and sub-stages
 ```
 Job-Market-project/
 │
-├── .env                                         # to save the APIs secret keys and are ignored before pushing the files to GitHub via .gitignore
+├── .env                                        # Environment variables file
 ├── .github/
-│   └── workflows/                               # Contains all the ci-cd yml and the Issue/bug files 
-│       └── ci.yml                               # GitHub Actions workflow file
-|── images /
-│       └── (all image files in the directory)
-├── scripts/
-│   ├── web_scraping/
-│   │   ├── adjurna.py                           # Adjurna python file to extract data using API
-│   │   ├── muse.py                              # Muse python file to extract data using API
-│   │   ├── ss.py                                # Stepstone python file to extract 
-│   │   └── requirements.txt                     # Dependent files
-│   └── etl/
-│   │   └── etlscript.py                        # The etl python file
-│   └── database/
-│   │   └── db_connection.py
-│   └── plot_analysis/
-│        └── uscase.py
-│  
-├── data/
-│   ├── scraped_data/
-│   │   └── ajurna                               # Adjurna data
-│   │          └── ajurna_Json/ajurna_data.Json
-│   │          └── ajurna_csv/ajurna_data.csv
-│   │   └── muse/                                # Muse data
-│   │          └── muse_Json/muse_data.Json
-│   │          └── muse_csv/muse_data.csv
-│   │   └── ss/                                  # Stepstone data
-│   │          └── ss_Json/muse_data.Json
-│   │          └── ss_csv/muse_data.csv
-│   └── processed_data/
-│       └── (empty folder for storing processed data)
-│
-└── documentation/
-    └── README.md
-    └──  ProjectPlan.md
-    └──  LICENSE.md
-    └──  Contribution-guidelines.md
-    └──  UserStories.md
+│   └── workflows/                              # GitHub Actions workflow directory
+│       └── ci.yml                              # CI/CD workflow file
+├── images/                                     # Directory for image files
+├── scripts/                                    # Directory for scripts
+│   ├── web_scraping/                          # Directory for web scraping scripts
+│   │   ├── adjurna.py                          # Script for Adjurna data extraction
+│   │   ├── muse.py                             # Script for Muse data extraction
+│   │   └── ss.py                               # Script for Stepstone data extraction
+│   ├── etl/                                    # Directory for ETL scripts
+│   │   └── etlscript.py                        # ETL script
+│   ├── database/                               # Directory for database scripts
+│   │   └── db_connection.py                    # Database connection script
+│   └── plot_analysis/                         # Directory for plot analysis scripts
+│        └── uscase.py                          # Use case plot analysis script
+├── data/                                      # Directory for data
+│   ├── scraped_data/                          # Directory for scraped data
+│   │   ├── adjurna/                           # Directory for Adjurna data
+│   │   │   └── csv/                           # Directory for CSV files
+│   │   │       └── adzuna_scrapped_data.csv   # Adjurna scraped data file
+│   │   ├── muse/                              # Directory for Muse data
+│   │   │   └── csv/                           # Directory for CSV files
+│   │   │       └── muse_scrapped_data.csv     # Muse scraped data file
+│   │   └── ss/                                # Directory for Stepstone data
+│   │       └── ss_datascience_germany_20240221.csv # Stepstone data file
+│   └── processed_data/                        # Directory for processed data
+│       ├── adjurna_processed_data/            # Directory for processed Adjurna data
+│       │   └── adzuna_scrapped_data.csv       # Processed Adjurna data file
+│       ├── muse_processed_data/               # Directory for processed Muse data
+│       │   └── muse_scrapped_data.csv         # Processed Muse data file
+│       └── ss_processed_data/                 # Directory for processed Stepstone data
+│           └── ss_datascience_germany_20240221.csv # Processed Stepstone data file
+├── README.md                                  # Readme file
+├── ProjectPlan.md                             # Project plan file
+├── LICENSE.md                                 # License file
+├── Contribution-guidelines.md                 # Contribution guidelines file
+└── UserStories.md                             # User stories file
+
 ```
 
 ## Docker Images
