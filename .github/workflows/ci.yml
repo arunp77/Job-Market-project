@@ -26,12 +26,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Extract and process data
-      run: |
-        python scripts/web_scraping/adjurna.py
-        python scripts/web_scraping/muse.py
-        python scripts/web_scraping/ss.py
-        python scripts/etl/etlscript.py
+    # - name: Extract and process data
+    #  run: |
+    #    python scripts/web_scraping/adjurna.py
+    #    python scripts/web_scraping/muse.py
+    #    python scripts/web_scraping/ss.py
+    #    python scripts/etl/etlscript.py
 
     - name: Start Elasticsearch
       run: |
