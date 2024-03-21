@@ -112,6 +112,7 @@ Job-Market-project/
 │       │   └── muse_scrapped_data.csv         # Processed Muse data file
 │       └── ss_processed_data/                 # Directory for processed Stepstone data
 │           └── ss_datascience_germany_20240221.csv # Processed Stepstone data file
+├── api.py                                     # FASTApi
 ├── README.md                                  # Readme file
 ├── ProjectPlan.md                             # Project plan file
 ├── LICENSE.md                                 # License file
@@ -126,15 +127,31 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
 
 ## Setup Instructions
 
-1. Clone the repository:
+1. **Clone the repository:** Clone this `Job-Market-project` repository to your local machine using Git:
    ```bash
    git clone https://github.com/arunp77/Job-Market-Project.git
    ```
-2. Navigate to the project directory:
+2. **Navigate to the project directory:** Change your current directory to Job-Market-project:
    ```bash
    cd Job-Market-Project
    ```
-3. Follow the instructions in each stage's folder to execute the corresponding tasks.
+3. **Set Up Virtual Environment (Optional):** It's a good practice to work within a virtual environment to manage dependencies. In our case, we have created a Python virtual environment using `virtualenv` or `conda`:
+   ```bash
+   # Using virtualenv
+   python -m venv env
+   source env/bin/activate
+   
+   # Using conda
+   conda create --name myenv
+   conda activate myenv
+   ```
+   
+5. **Install Dependencies:** Install the required Python packages specified in the requirements.txt file:
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. **Compile and Run the Project:** 
+8. Follow the instructions in each stage's folder to execute the corresponding tasks.
 
 ## Launch on Binder
   [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
