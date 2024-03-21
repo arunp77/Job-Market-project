@@ -28,13 +28,13 @@ jobs:
       run: |
         docker-compose -f path/to/your/docker-compose.yaml up -d elasticsearch
 
-    - name: Load data into Elasticsearch
-      run: python scripts/database/db_connection.py
+    #- name: Load data into Elasticsearch
+    #  run: python scripts/database/db_connection.py
 
     - name: Create FastAPI application
       run: |
         # Replace this command with the script/command to create the FastAPI application
-        python scripts/create_fastapi_app.py
+        python api.py
 
     - name: Build Docker image
       run: |
