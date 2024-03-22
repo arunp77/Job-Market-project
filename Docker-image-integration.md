@@ -78,3 +78,15 @@ Summary of the steps that one can take to create a Docker image  and integrate i
         docker push arunp77/job_market:latest
         ```
 
+8. **Run the Docker Container:** After building the Docker image, you can run a Docker container based on that image using the following command:
+   
+   ```bash
+   docker run -d --name job-market-container -p 8000:8000 job-market
+   ```
+
+   Replace `8000:8000` with the appropriate port mapping if your FastAPI server runs on a different port. Here we expose 8000 port in Dockerfile 
+   ```bash
+   # Expose port 8000 to allow external access
+   EXPOSE 8000
+   ```
+   If you don't add the `EXPOSE 8000` instruction in your `Dockerfile`, it won't prevent your FastAPI application from running within the Docker container. However, it will affect how you access the application from outside the container.
