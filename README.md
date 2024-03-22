@@ -43,13 +43,21 @@ This project aims to showcase skills in data engineering by gathering and analyz
    ```bash
    pip install -r requirements.txt
    ```
-6. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
+
+6. **Access the databases on Elasticsearch:** Please see below for more details ([Go to Elasticsearch Integration](#elasticsearch-integration)). To run the elasticsearch, we must have `elasticsearch` python clinet installed. Next run the [docker-compose.yml](docker-compose.yml) first using (detached mode)
+    ```bash
+    docker-compose up -d
+    ```
+    and then run the `db_connection.py` file to integration the elasticsearch
+
+
+7. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
 
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
    ```
    
-8. **Access FastAPI Application:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
+8. **Deployment: FastAPI:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
 ## Project structure:
 
@@ -97,7 +105,7 @@ Job-Market-project/
 └── UserStories.md                             # User stories file
 ```
 
-## Elasticsearch Integration 
+## Elasticsearch Integration <a name="elasticsearch-integration"></a>
 
 In this project, we utilize Elasticsearch as our primary database solution for efficient storage, retrieval, and analysis of structured and unstructured data. Elasticsearch is a distributed, RESTful search and analytics engine designed for horizontal scalability, real-time search, and robust analytics capabilities. Elasticsearch proves invaluable in situations requiring full-text search, real-time indexing, scalability, and advanced analytics capabilities. Here python is utilized for seamless interaction with Elasticsearch by leveraging the `elasticsearch` Python client library. We can install the `elasticsearch` module using the following command in your terminal or command prompt:
 ```bash
