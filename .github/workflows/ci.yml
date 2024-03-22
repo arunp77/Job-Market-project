@@ -38,10 +38,10 @@ jobs:
     #- name: Load data into Elasticsearch
     #  run: python scripts/database/db_connection.py
 
-    - name: Create FastAPI application
-      run: |
-        # Replace this command with the script/command to create the FastAPI application
-        python api.py
+    #- name: Create FastAPI application
+    #  run: |
+    #    # Replace this command with the script/command to create the FastAPI application
+    #    python api.py
 
     - name: Build Docker image
       run: |
