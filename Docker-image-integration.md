@@ -32,10 +32,10 @@ Summary of the steps that one can take to create a Docker image  and integrate i
     -  `RUN pip install --no-cache-dir -r requirements.txt`: this line install all the dependencies specified in the `requirements.txt` file using `pip` where pip will not cache downloaded packages, which save disk space in the resulting Docker image.
     - `CMD ["python", "scripts/etl/etl_script.py"]`: line specifies the default command to run when container starts. It runs the python script `etl_scripts.py` relative to the working directory `/app`. This command will be executed automatically when a container based on the image is launched, unless overridden by specifying a different command at runtime. (Later we will create a `Application` with `setup.py` in the home directory where  we will call all functions).
 
-|                                                       Note                                                            |
-|-----------------------------------------------------------------------------------------------------------------------|
-| Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`                      |
-| syntax. When secrets are used in a workflow, their values are masked in the logs to prevent accidental exposure.      |
+   |                                                       Note                                                            |
+   |-----------------------------------------------------------------------------------------------------------------------|
+   | Here `.github/workflows/ci.yml` file can access ad use secrets using `{{ secrets.SECRET_NAME }}`                      |
+   | syntax. When secrets are used in a workflow, their values are masked in the logs to prevent accidental exposure.      |
 
 5. After including the Python dependencies in `requirements.txt`, completing the aforementioned steps,  the updates are pushed to the GitHub repository. This triggers the automatic generation and upload of Docker images directly to Docker Hub. You can access these Docker images here: [Docker images](https://hub.docker.com/repository/docker/arunp77/job_market/general). This streamlined process ensures that all files are kept up-to-date in the GitHub repository, while Docker images are seamlessly created.
 

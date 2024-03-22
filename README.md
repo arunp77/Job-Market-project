@@ -116,13 +116,14 @@ pip install elasticsearch
 ```
 - The `db_connection.py` script demonstrates how Python code can be written to establish connections to Elasticsearch, perform data operations, and integrate Elasticsearch functionality into our project workflow effectively.
 - Docker plays a crucial role in our project by facilitating the containerization of Elasticsearch and simplifying the management of deployment environments. 
-- The [docker-compose.yml](docker-compose.yml) file defines the Docker services required for running Elasticsearch and Kibana within isolated containers.
+- The [docker-compose.yml](docker-compose.yml) file defines the Docker services required for running [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker) and Kibana within isolated containers.
+  - **Docker Images used for the Elasticsearch:** [Elasticsearch](https://www.docker.elastic.co/r/elasticsearch) 
+  - **Docker Images used for the Kibana:** [Kibana](https://www.docker.elastic.co/r/kibana/kibana:8.1.2) 
 - Docker Compose orchestrates the deployment of these services, ensuring consistent and reproducible environments across different development and deployment stages. By containerizing Elasticsearch, we achieve greater portability, scalability, and ease of deployment, making it convenient to deploy our Elasticsearch infrastructure in various environments with minimal configuration.
-
 
 ## Docker Images
 
-We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment.
+We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment. For more details, in what way we planned our project Docker image, please see [docker-image integration](Docker-image-integration.md).
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:

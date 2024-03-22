@@ -7,8 +7,15 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
+# Copy the requirements file to the working directory
+COPY requirements.txt .
+
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the entire project directory into the container
+COPY . .
+
 # Run script or command to start your application
 CMD ["python", "scripts/etl/etlscript.py"]
+# CMD ["python", "api.py"] # will run it for running complete project at once
