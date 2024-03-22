@@ -152,7 +152,9 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
    ```
 6. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
 
-   `uvicorn api:api --host 0.0.0.0 --port 8000`
+   ```bash
+   uvicorn api:api --host 0.0.0.0 --port 8000
+   ```
    
 8. **Access FastAPI Application:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
