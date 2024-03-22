@@ -52,6 +52,8 @@ This project aims to showcase skills in data engineering by gathering and analyz
     ```bash
     python3 db_connection.py
     ```
+    - So the Elasticsearch runs at port: [http://localhost:9200/](http://localhost:9200/)
+    - So the Kibana runs at port: [http://localhost:5601/](http://localhost:5601/)
 
 
 7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
@@ -59,6 +61,7 @@ This project aims to showcase skills in data engineering by gathering and analyz
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
    ```
+   Here the FastApi runs at port: [http://localhost:8000/](http://localhost:8000/)
    
 8. **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
