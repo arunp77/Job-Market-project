@@ -48,16 +48,19 @@ This project aims to showcase skills in data engineering by gathering and analyz
     ```bash
     docker-compose up -d
     ```
-    and then run the `db_connection.py` file to integration the elasticsearch
+    and then run the `db_connection.py` file to integration the elasticsearch using
+    ```bash
+    python3 db_connection.py
+    ```
 
 
-7. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
+7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
 
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
    ```
    
-8. **Deployment: FastAPI:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
+8. **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
 ## Project structure:
 
