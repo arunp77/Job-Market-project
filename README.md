@@ -24,7 +24,7 @@ This project aims to showcase skills in data engineering by gathering and analyz
    ```bash
    cd Job-Market-Project
    ```
-3. **Set Up Virtual Environment (Optional):** It's a good practice to work within a virtual environment to manage dependencies. In our case, we have created a Python virtual environment using `virtualenv` or `conda`:
+3. **Set Up Virtual Environment (Optional):** It's a good practice to work within a virtual environment to manage dependencies. In our case, we have created a Python virtual environment using `virtualenv` (which can be installed through `pip install virtualenv`) or `conda`:
    ```bash
    # Using virtualenv
    python -m venv env
@@ -33,6 +33,10 @@ This project aims to showcase skills in data engineering by gathering and analyz
    # Using conda
    conda create --name myenv
    conda activate myenv
+   ```
+   **Deactivate the Virtual Environment:** When you're done working on your project, you can deactivate the virtual environment to return to the global Python environment.
+   ```bash
+    deactivate
    ```
    
 5. **Install Dependencies:** Install the required Python packages specified in the requirements.txt file:
@@ -46,9 +50,6 @@ This project aims to showcase skills in data engineering by gathering and analyz
    ```
    
 8. **Access FastAPI Application:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
-
-## Launch on Binder
-  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
 
 ## Project structure:
 
@@ -96,65 +97,17 @@ Job-Market-project/
 └── UserStories.md                             # User stories file
 ```
 
-## Project Stages
+## Elasticsearch Integration 
 
-The project is divided into the following stages and sub-stages
+In this project, we utilize Elasticsearch as our primary database solution for efficient storage, retrieval, and analysis of structured and unstructured data. Elasticsearch is a distributed, RESTful search and analytics engine designed for horizontal scalability, real-time search, and robust analytics capabilities. Elasticsearch proves invaluable in situations requiring full-text search, real-time indexing, scalability, and advanced analytics capabilities. Here python is utilized for seamless interaction with Elasticsearch by leveraging the `elasticsearch` Python client library. We can install the `elasticsearch` module using the following command in your terminal or command prompt:
+```bash
+pip install elasticsearch
+```
+- The `db_connection.py` script demonstrates how Python code can be written to establish connections to Elasticsearch, perform data operations, and integrate Elasticsearch functionality into our project workflow effectively.
+- Docker plays a crucial role in our project by facilitating the containerization of Elasticsearch and simplifying the management of deployment environments. 
+- The [docker-compose.yml](docker-compose.yml) file defines the Docker services required for running Elasticsearch and Kibana within isolated containers.
+- Docker Compose orchestrates the deployment of these services, ensuring consistent and reproducible environments across different development and deployment stages. By containerizing Elasticsearch, we achieve greater portability, scalability, and ease of deployment, making it convenient to deploy our Elasticsearch infrastructure in various environments with minimal configuration.
 
-### 1. Collecting Data
-
-- **Objective**: Gather job offers and company information from multiple sources.
-- **Sources**:
-  - [The Muse API](https://www.themuse.com/developers/api/v2)
-  - [Adzuna API](https://developer.adzuna.com/)
-  - Web Scraping from stepstone using selenium and beautifulsoup.
-- **Tools**:
-  - Requests library for API interaction.
-  - Postman tool (for testing)
-  - Web scraping techniques.
-
-### 2. Data Modeling
-
-- **Objective**: Create a data lake or database to store collected data.
-- **Approaches**: 
-  - NoSQL Database (Elastic search)
-- **Tools**:
-  - Elasticsearch
-  - UML Diagram for data model visualization.
-
-### 3. Data Consumption
-
-<details>
-<summary>Click to expand</summary>
-  In our present scenario, we get data from 3 sources, MUSE API, Adjurna API, and Stepstone.
-</details>
-
-- **Objective**: Analyze the collected data to derive insights about the job market.
-- **Analysis Tasks**:
-  - Number of offers per company.
-  - Sectors with the highest recruitment.
-  - Ideal job criteria (location, technologies, sector, level).
-- **Tools**:
-  - Dash for visualization.
-  - Elasticsearch for statistics.
-  - Queries fed by the database(s).
-
-### 4. Going into Production
-
-- **Objective**: Deploy project components and create APIs for data retrieval.
-- **Components**:
-  - API using FastAPI or Flask.
-  - Docker containers for each component. Steps for the dockerization are available in [Docker-image file](Docker-image-integration.md).
-- **Tools**:
-  - FastAPI or Flask for API development.
-  - Docker for containerization.
-  - Docker Compose for container orchestration.
-
-### 5. Automation of Flow (future work)
-
-- **Objective**: Automate data retrieval from sources.
-- **Tools**:
-  - Apache Airflow for workflow automation.
-  - Python file defining the DAG.
 
 ## Docker Images
 
@@ -180,4 +133,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 > [Link to the docs for project](https://docs.google.com/document/d/1glRF8HtyNqcHnZud8KqeJYLdC07_MqjuFGJVOuw7gBc/edit)
 
-<!--------reference: https://github.com/kevAnto/fast-API/tree/main>
+<!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
+
+## Launch on Binder
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)

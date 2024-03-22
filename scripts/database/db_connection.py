@@ -172,7 +172,7 @@ def handler():
 
         # get script base path
         script_dir = os.path.dirname(os.path.realpath(__file__))
-        read_file_path = script_dir.replace("\scripts\database", "\data\processed_data")
+        read_file_path = script_dir.replace("\\scripts\\database", "\\data\\processed_data")
         print(read_file_path)
         # call the below function to load the dataset successfully to ES database
         ss_dataset(read_file_path, es)

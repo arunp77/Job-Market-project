@@ -15,7 +15,9 @@ By leveraging these advantages, organizations and researchers can gain valuable 
 Steps to launch the Elastic search and load data,
 
 1. Run the docker-compose.yml as below where the repo present
-docker-compose up -d. 
+  ```bash
+  docker-compose up -d
+  ```
 2. open kibana in any browser using :: http://localhost:5601/
 3. To access it, open pane like,
    

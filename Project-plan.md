@@ -1,7 +1,67 @@
 # Various steps to work on the project
 
+The project is divided into the following stages and sub-stages
+
+### 1. Collecting Data
+
+- **Objective**: Gather job offers and company information from multiple sources.
+- **Sources**:
+  - [The Muse API](https://www.themuse.com/developers/api/v2)
+  - [Adzuna API](https://developer.adzuna.com/)
+  - Web Scraping from stepstone using selenium and beautifulsoup.
+- **Tools**:
+  - Requests library for API interaction.
+  - Postman tool (for testing)
+  - Web scraping techniques.
+
+### 2. Data Modeling
+
+- **Objective**: Create a data lake or database to store collected data.
+- **Approaches**: 
+  - NoSQL Database (Elastic search)
+- **Tools**:
+  - Elasticsearch
+  - UML Diagram for data model visualization.
+
+### 3. Data Consumption
+
+<details>
+<summary>Click to expand</summary>
+  In our present scenario, we get data from 3 sources, MUSE API, Adjurna API, and Stepstone.
+</details>
+
+- **Objective**: Analyze the collected data to derive insights about the job market.
+- **Analysis Tasks**:
+  - Number of offers per company.
+  - Sectors with the highest recruitment.
+  - Ideal job criteria (location, technologies, sector, level).
+- **Tools**:
+  - Dash for visualization.
+  - Elasticsearch for statistics.
+  - Queries fed by the database(s).
+
+### 4. Going into Production
+
+- **Objective**: Deploy project components and create APIs for data retrieval.
+- **Components**:
+  - API using FastAPI or Flask.
+  - Docker containers for each component. Steps for the dockerization are available in [Docker-image file](Docker-image-integration.md).
+- **Tools**:
+  - FastAPI or Flask for API development.
+  - Docker for containerization.
+  - Docker Compose for container orchestration.
+
+### 5. Automation of Flow (future work)
+
+- **Objective**: Automate data retrieval from sources.
+- **Tools**:
+  - Apache Airflow for workflow automation.
+  - Python file defining the DAG.
+
+
 These are the instructions given to us from the Course cohost and is available at [Datascientist.com project doc](https://docs.google.com/document/d/1glRF8HtyNqcHnZud8KqeJYLdC07_MqjuFGJVOuw7gBc/edit) 
 
+# Contributions
 ## Step 0 
 ### Framing (first meeting):
 | Task | Description and links|
