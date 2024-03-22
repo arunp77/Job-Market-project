@@ -14,6 +14,88 @@ This project aims to showcase skills in data engineering by gathering and analyz
 - **Docker Compose:** Docker v2.15.1
 - **API:** fastAPI
 
+## Setup Instructions
+
+1. **Clone the repository:** Clone this `Job-Market-project` repository to your local machine using Git:
+   ```bash
+   git clone https://github.com/arunp77/Job-Market-Project.git
+   ```
+2. **Navigate to the project directory:** Change your current directory to Job-Market-project:
+   ```bash
+   cd Job-Market-Project
+   ```
+3. **Set Up Virtual Environment (Optional):** It's a good practice to work within a virtual environment to manage dependencies. In our case, we have created a Python virtual environment using `virtualenv` or `conda`:
+   ```bash
+   # Using virtualenv
+   python -m venv env
+   source env/bin/activate
+   
+   # Using conda
+   conda create --name myenv
+   conda activate myenv
+   ```
+   
+5. **Install Dependencies:** Install the required Python packages specified in the requirements.txt file:
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
+
+   ```bash
+   uvicorn api:api --host 0.0.0.0 --port 8000
+   ```
+   
+8. **Access FastAPI Application:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
+
+## Launch on Binder
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
+
+## Project structure:
+
+```
+Job-Market-project/
+│
+├── .env                                        # Environment variables file
+├── .github/
+│   └── workflows/                              # GitHub Actions workflow directory
+│       └── ci.yml                              # CI/CD workflow file
+├── images/                                     # Directory for image files
+├── scripts/                                    # Directory for scripts
+│   ├── web_scraping/                          # Directory for web scraping scripts
+│   │   ├── adjurna.py                          # Script for Adjurna data extraction
+│   │   ├── muse.py                             # Script for Muse data extraction
+│   │   └── ss.py                               # Script for Stepstone data extraction
+│   ├── etl/                                    # Directory for ETL scripts
+│   │   └── etlscript.py                        # ETL script
+│   ├── database/                               # Directory for database scripts
+│   │   └── db_connection.py                    # Database connection script
+│   └── plot_analysis/                         # Directory for plot analysis scripts
+│        └── uscase.py                          # Use case plot analysis script
+├── data/                                      # Directory for data
+│   ├── scraped_data/                          # Directory for scraped data
+│   │   ├── adjurna/                           # Directory for Adjurna data
+│   │   │   └── csv/                           # Directory for CSV files
+│   │   │       └── adzuna_scrapped_data.csv   # Adjurna scraped data file
+│   │   ├── muse/                              # Directory for Muse data
+│   │   │   └── csv/                           # Directory for CSV files
+│   │   │       └── muse_scrapped_data.csv     # Muse scraped data file
+│   │   └── ss/                                # Directory for Stepstone data
+│   │       └── ss_datascience_germany_20240221.csv # Stepstone data file
+│   └── processed_data/                        # Directory for processed data
+│       ├── adjurna_processed_data/            # Directory for processed Adjurna data
+│       │   └── adzuna_scrapped_data.csv       # Processed Adjurna data file
+│       ├── muse_processed_data/               # Directory for processed Muse data
+│       │   └── muse_scrapped_data.csv         # Processed Muse data file
+│       └── ss_processed_data/                 # Directory for processed Stepstone data
+│           └── ss_datascience_germany_20240221.csv # Processed Stepstone data file
+├── api.py                                     # FASTApi
+├── README.md                                  # Readme file
+├── ProjectPlan.md                             # Project plan file
+├── LICENSE.md                                 # License file
+├── Contribution-guidelines.md                 # Contribution guidelines file
+└── UserStories.md                             # User stories file
+```
+
 ## Project Stages
 
 The project is divided into the following stages and sub-stages
@@ -74,92 +156,9 @@ The project is divided into the following stages and sub-stages
   - Apache Airflow for workflow automation.
   - Python file defining the DAG.
 
-## Project structure:
-
-```
-Job-Market-project/
-│
-├── .env                                        # Environment variables file
-├── .github/
-│   └── workflows/                              # GitHub Actions workflow directory
-│       └── ci.yml                              # CI/CD workflow file
-├── images/                                     # Directory for image files
-├── scripts/                                    # Directory for scripts
-│   ├── web_scraping/                          # Directory for web scraping scripts
-│   │   ├── adjurna.py                          # Script for Adjurna data extraction
-│   │   ├── muse.py                             # Script for Muse data extraction
-│   │   └── ss.py                               # Script for Stepstone data extraction
-│   ├── etl/                                    # Directory for ETL scripts
-│   │   └── etlscript.py                        # ETL script
-│   ├── database/                               # Directory for database scripts
-│   │   └── db_connection.py                    # Database connection script
-│   └── plot_analysis/                         # Directory for plot analysis scripts
-│        └── uscase.py                          # Use case plot analysis script
-├── data/                                      # Directory for data
-│   ├── scraped_data/                          # Directory for scraped data
-│   │   ├── adjurna/                           # Directory for Adjurna data
-│   │   │   └── csv/                           # Directory for CSV files
-│   │   │       └── adzuna_scrapped_data.csv   # Adjurna scraped data file
-│   │   ├── muse/                              # Directory for Muse data
-│   │   │   └── csv/                           # Directory for CSV files
-│   │   │       └── muse_scrapped_data.csv     # Muse scraped data file
-│   │   └── ss/                                # Directory for Stepstone data
-│   │       └── ss_datascience_germany_20240221.csv # Stepstone data file
-│   └── processed_data/                        # Directory for processed data
-│       ├── adjurna_processed_data/            # Directory for processed Adjurna data
-│       │   └── adzuna_scrapped_data.csv       # Processed Adjurna data file
-│       ├── muse_processed_data/               # Directory for processed Muse data
-│       │   └── muse_scrapped_data.csv         # Processed Muse data file
-│       └── ss_processed_data/                 # Directory for processed Stepstone data
-│           └── ss_datascience_germany_20240221.csv # Processed Stepstone data file
-├── api.py                                     # FASTApi
-├── README.md                                  # Readme file
-├── ProjectPlan.md                             # Project plan file
-├── LICENSE.md                                 # License file
-├── Contribution-guidelines.md                 # Contribution guidelines file
-└── UserStories.md                             # User stories file
-
-```
-
 ## Docker Images
 
 We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment.
-
-## Setup Instructions
-
-1. **Clone the repository:** Clone this `Job-Market-project` repository to your local machine using Git:
-   ```bash
-   git clone https://github.com/arunp77/Job-Market-Project.git
-   ```
-2. **Navigate to the project directory:** Change your current directory to Job-Market-project:
-   ```bash
-   cd Job-Market-Project
-   ```
-3. **Set Up Virtual Environment (Optional):** It's a good practice to work within a virtual environment to manage dependencies. In our case, we have created a Python virtual environment using `virtualenv` or `conda`:
-   ```bash
-   # Using virtualenv
-   python -m venv env
-   source env/bin/activate
-   
-   # Using conda
-   conda create --name myenv
-   conda activate myenv
-   ```
-   
-5. **Install Dependencies:** Install the required Python packages specified in the requirements.txt file:
-   ```bash
-   pip install -r requirements.txt
-   ```
-6. **Compile and Run the Project:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
-
-   ```bash
-   uvicorn api:api --host 0.0.0.0 --port 8000
-   ```
-   
-8. **Access FastAPI Application:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
-
-## Launch on Binder
-  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
