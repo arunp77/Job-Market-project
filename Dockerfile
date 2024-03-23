@@ -16,13 +16,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project directory into the container
 COPY . .
 
-# Expose port 8000 for FastApi to allow external access
+
+# Expose ports for FastAPI (8000), Elasticsearch (9200), and Kibana (5601)
+# Note: Exposing ports in a Dockerfile does not publish them to the host machine
+# This only serves as documentation for users of the image
+
+# 1. Expose port 8000 for FastApi to allow external access
 EXPOSE 8000
 
-# Expose port 9200 for Elasticsearch to allow external access
+# 2. Expose port 9200 for Elasticsearch to allow external access
 EXPOSE 9200
 
-# Expose port 9200 for Kibana to allow external access
+# 3. Expose port 9200 for Kibana to allow external access
 EXPOSE 5601
 
 # Run script or command to start your application

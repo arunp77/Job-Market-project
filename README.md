@@ -62,6 +62,7 @@ This project aims to showcase skills in data engineering by gathering and analyz
     - So the Elasticsearch runs at port: [http://localhost:9200/](http://localhost:9200/)
     - So the Kibana runs at port: [http://localhost:5601/](http://localhost:5601/)
 
+    Here it should be noted that `db_connection.py` script is responsible for establishing a connection to Elasticsearch and loading data into it. 
 
 7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py` (for more details see [FASTApi section below](#fast-api)):
 
