@@ -16,9 +16,17 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project directory into the container
 COPY . .
 
-# Expose port 8000 to allow external access
+# Expose port 8000 for FastApi to allow external access
 EXPOSE 8000
+
+# Expose port 9200 for Elasticsearch to allow external access
+EXPOSE 9200
+
+# Expose port 9200 for Kibana to allow external access
+EXPOSE 5601
 
 # Run script or command to start your application
 CMD ["python", "scripts/etl/etlscript.py"]
-# CMD ["python", "api.py"] # will run it for running complete project at once
+
+## will run it for running complete project at once
+# CMD ["python", "api.py"]
