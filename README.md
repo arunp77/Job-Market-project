@@ -1,6 +1,13 @@
 # InsightfulRecruit: Unveiling the Job Market Landscape through Data Engineering
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project) [![Top Language](https://img.shields.io/github/languages/top/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project)
+[![GitHub repo size](https://img.shields.io/github/repo-size/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project) 
+![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg) 
+![Language](https://img.shields.io/badge/language-Python-yellow.svg) 
+![Downloads](https://img.shields.io/github/downloads/arunp77/Job-Market-project/total.svg)
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/arunp77/Job-Market-project/blob/main/README.md)
+![Open Issues](https://img.shields.io/github/issues-raw/arunp77/Job-Market-project.svg)
+
+
 
  
 ## Overview
@@ -56,7 +63,7 @@ This project aims to showcase skills in data engineering by gathering and analyz
     - So the Kibana runs at port: [http://localhost:5601/](http://localhost:5601/)
 
 
-7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py`:
+7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py` (for more details see [FASTApi section below](#fast-api)):
 
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
@@ -127,6 +134,9 @@ pip install elasticsearch
 ## Docker Images
 
 We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment. For more details, in what way we planned our project Docker image, please see [docker-image integration](Docker-image-integration.md).
+
+
+## FASTApi deployment <a name="fast-api"></a>
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
