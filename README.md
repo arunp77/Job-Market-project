@@ -139,10 +139,13 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
 
 ## FASTApi deployment <a name="fast-api"></a>
 - The first step is to install the `fastapi` and `uvicorn` libraries. `uvicorn` is a library that allows us to launch the server created by FastAPI. 
+- We need an [Asynchronous Server Gateway Interface](https://asgi.readthedocs.io/en/latest/) (ASGI server), for production such as [Uvicorn](https://www.uvicorn.org/) or [Hypercorn](https://github.com/pgjones/hypercorn), but we choose uvicorn to deploy on a local machine.
+
 - To install `fastapi` and `uvicorn` libraries:
   ```bash
   pip install fastapi uvicorn
   ```
+  
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
@@ -168,8 +171,3 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Launch on Binder
   [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
-
-  <div style="width: auto; height: auto; background-color: lightblue; border: 1px solid black; padding: 20px; margin: 20px;">
-  <strong>Importnat note:</strong>
-  <p>We need an <a href="https://asgi.readthedocs.io/en/latest/" target="_blank">Asynchronous Server Gateway Interface</a> (ASGI server), for production such as <a href="https://www.uvicorn.org/" target="_blank">Uvicorn</a> or <a href="https://github.com/pgjones/hypercorn" target="_blank">Hypercorn</a>.</p>
-</div>
