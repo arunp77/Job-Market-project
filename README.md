@@ -168,3 +168,8 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Launch on Binder
   [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/arunp77/Job-Market-project/main)
+
+  <div style="width: auto; height: auto; background-color: lightblue; border: 1px solid black; padding: 20px; margin: 20px;">
+  <strong>Importnat note:</strong>
+  <p>We need an <a href="https://asgi.readthedocs.io/en/latest/" target="_blank">Asynchronous Server Gateway Interface</a> (ASGI server), for production such as <a href="https://www.uvicorn.org/" target="_blank">Uvicorn</a> or <a href="https://github.com/pgjones/hypercorn" target="_blank">Hypercorn</a>.</p>
+</div>
