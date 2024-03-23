@@ -57,21 +57,21 @@ This project aims to showcase skills in data engineering by gathering and analyz
     ```
     and then run the `db_connection.py` file to integration the elasticsearch using
     ```bash
-    python3 db_connection.py
+    python db_connection.py
     ```
     - So the Elasticsearch runs at port: [http://localhost:9200/](http://localhost:9200/)
     - So the Kibana runs at port: [http://localhost:5601/](http://localhost:5601/)
 
     Here it should be noted that `db_connection.py` script is responsible for establishing a connection to Elasticsearch and loading data into it. 
 
-7. **Deployment: FastAPI:** We get the use cases and launching our APIS, when we compile the python script `api.py` (for more details see [FASTApi section below](#fast-api)):
+7. **Deployment: FastAPI:** Our FastAPI is created using the `api.py` script available in the repository. Running the `api.py` script using the command `python api.py` initializes a server at [http://localhost:8000/](http://localhost:8000/). For more details on each endpoint and how to interact with the API, refer to the API documentation at [http://localhost:8000/api/docs](http://localhost:8000/api/docs) or [http://localhost:8000/api/redoc](http://localhost:8000/api/redoc) (for more details see [FASTApi section below](#fast-api)). To start the FastAPI server, we can use the following command:
 
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
    ```
-   Here the FastApi runs at port: [http://localhost:8000/](http://localhost:8000/)
+
    
-8. **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
+9.  **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
 ## Project structure:
 
@@ -138,6 +138,11 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
 
 
 ## FASTApi deployment <a name="fast-api"></a>
+- The first step is to install the `fastapi` and `uvicorn` libraries. `uvicorn` is a library that allows us to launch the server created by FastAPI. 
+- To install `fastapi` and `uvicorn` libraries:
+  ```bash
+  pip install fastapi uvicorn
+  ```
 
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
