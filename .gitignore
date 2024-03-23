@@ -174,4 +174,7 @@ cspell.json
 # Elasticsearch logfiles
 logfile.log
 
+
+# Ignore these files as well
 Project-plan.md
+Machine-learning-task.md
