@@ -23,7 +23,7 @@ Welcome to the Job Market API! This API provides functionalities to extract, tra
 
 4. **Run the API**: Start the FastAPI application using Uvicorn.
    ```
-   uvicorn api:app --reload
+   uvicorn api:api --reload
    ```
 
 ## API Endpoints
