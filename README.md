@@ -147,7 +147,6 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
 
    ![query](images/api-query.png)
   
-
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
 
