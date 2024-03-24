@@ -75,5 +75,5 @@ jobs:
 
     - name: Store environment variables
       run: |
-        echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> Job-Market-project/.env
-        echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> Job-Market-project/.env
+        echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> $HOME/.env
+        echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $HOME/.env
