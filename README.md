@@ -7,12 +7,11 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/arunp77/Job-Market-project/blob/main/README.md)
 ![Open Issues](https://img.shields.io/github/issues-raw/arunp77/Job-Market-project.svg)
 
-
-
- 
 ## Overview
 
 This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.
+
+![Process](images\steps.png)
 
 ## Prerequisite
 - **WebScrapping:** BeautifulSoup, Selenium
