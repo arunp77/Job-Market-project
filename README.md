@@ -34,7 +34,10 @@ This project aims to showcase skills in data engineering by gathering and analyz
    ```bash
    # Using virtualenv
    python -m venv env
-   source env/bin/activate
+   # activate the enviornment
+   source env/bin/activate     # in mac
+   env\Scripts\activate        # in windows using Command Prompt
+   .\env\Scripts\Activate.ps1  # in windows using powershell
    
    # Using conda
    conda create --name myenv
