@@ -144,6 +144,8 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
   ```bash
   pip install fastapi uvicorn
   ```
+
+   ![query](images/api-query.png)
   
 
 ## Contributors
