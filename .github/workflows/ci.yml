@@ -73,7 +73,3 @@ jobs:
     - name: Deploy Docker image to production
       run: docker run -d -p 80:80 arunp77/job_market:latest
 
-    - name: Store environment variables
-      run: |
-        echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> ~/path/to/your/project/.env
-        echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> ~/path/to/your/project/.env
