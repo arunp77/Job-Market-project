@@ -4,27 +4,6 @@ Welcome to the Job Market API! This API provides functionalities to extract, tra
 
 ## Installation and Setup
 
-1. **Clone the Repository**: Clone the project repository to your local machine.
-   ```
-   git clone https://github.com/your_username/Job-Market-project.git
-   cd Job-Market-project
-   ```
-
-2. **Install Dependencies**: Install the required Python dependencies for the project.
-   ```
-   pip install -r requirements.txt
-   ```
-   or you can also install the `FastAPI` and `uvicorn` separatly into our project enviorment:
-   ```bash
-   pip install fastapi uvicorn
-   ```
-
-3. **Environment Variables**: Set up any necessary environment variables, such as API keys or Elasticsearch credentials, in the `.env` file. Make sure to add this file to the `.gitignore` to avoid committing sensitive information.
-
-4. **Run the API**: Start the FastAPI application using Uvicorn.
-   ```
-   uvicorn api:api --reload
-   ```
 
 ## API Endpoints
 

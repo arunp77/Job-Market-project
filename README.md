@@ -66,14 +66,22 @@ This project aims to showcase skills in data engineering by gathering and analyz
 
     Here it should be noted that `db_connection.py` script is responsible for establishing a connection to Elasticsearch and loading data into it. 
 
-7. **Deployment: FastAPI:** Our FastAPI is created using the `api.py` script available in the repository. Running the `api.py` script using the command `python api.py` initializes a server at [http://localhost:8000/](http://localhost:8000/). For more details on each endpoint and how to interact with the API, refer to the API documentation at [http://localhost:8000/api/docs](http://localhost:8000/api/docs) or [http://localhost:8000/api/redoc](http://localhost:8000/api/redoc) (for more details see [FASTApi section below](#fast-api)). To start the FastAPI server, we can use the following command:
+7. **Deployment: FastAPI:** Our FastAPI is created using the `api.py` script available in the repository. In our case the FASTApi server runs at [http://localhost:8000/](http://localhost:8000/) (for more details see [FASTApi section below](#fast-api)). To start the FastAPI server, we can use the following command:
 
    ```bash
    uvicorn api:api --host 0.0.0.0 --port 8000
    ```
 
+   or 
+   ```bash
+   uvicorn api:api --reload
+   ```
+   enables automatic reloading of the server whenever the source code changes. For more details on each endpoint and how to interact with the API
+   - `docs_url`: Specifies the URL path where the OpenAPI (Swagger UI) documentation will be available. By default, it's set to /docs and can be accessed at [http://localhost:8000/api/docs](http://localhost:8000/api/docs)
+   - `redoc_url`: Specifies the URL path where the ReDoc documentation will be available. By default, it's set to /redoc and can be accessed to [http://localhost:8000/api/redoc](http://localhost:8000/api/redoc).
+
    
-9.  **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
+8.  **Compile and Run the Project:** Once your FastAPI application is running, we can access it in our browser by navigating to `http://localhost:8000` (assuming we're running it locally).
 
 ## Project structure:
 
