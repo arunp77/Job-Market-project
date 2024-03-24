@@ -11,3 +11,4 @@ selenium
 bs4
 fastapi
 uvicorn==0.15.0
+plotly
