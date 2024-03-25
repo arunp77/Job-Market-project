@@ -11,7 +11,7 @@
 
 This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.
 
-![Process](images/steps.png)
+![Process](images/steps1.png)
 
 ## Prerequisite
 - **WebScrapping:** BeautifulSoup, Selenium
