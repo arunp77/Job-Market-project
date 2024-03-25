@@ -9,7 +9,7 @@ import pandas as pd
 
 api = FastAPI(
     title="Job Market API",
-    description="API powered by FastAPI for our project.",
+    description="API powered by FastAPI for our project. This project aims to gather, process, create a database and deploy using FASTApi. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.",
     version="1.0.1",
     docs_url="/api/docs",
     redoc_url="/api/redoc"
@@ -26,14 +26,14 @@ Returns:
 
 index_name = "job_list"
 
-@api.get("/")
+@api.get("/", description="Root endpoint to welcome users.")
 def welcome():
     """Root endpoint to welcome users."""
     return {"message": "Welcome to the Job Market API!"}
 
 
 # Create API endpoints to trigger the use cases
-@api.get("/load_data")
+@api.get("/load_data", description="Endpoint to load data into Elasticsearch.")
 def load_data():
     """Endpoint to load data into Elasticsearch."""
     try:
@@ -57,7 +57,7 @@ def load_data():
         print(f"An unexpected error occurred: {str(e)}")
         return {"error": "Failed to load data into Elasticsearch."}
 
-@api.get("/usecase1")
+@api.get("/usecase1", description="Endpoint to execute and retrieve results for use case 1.")
 def get_usecase1():
     """Endpoint to execute and retrieve results for use case 1."""
     try:
@@ -77,7 +77,7 @@ def get_usecase1():
         print(f"An unexpected error occurred: {str(e)}")
         return {"error": "Failed to execute use case 1."}
     
-@api.get("/usecase2")
+@api.get("/usecase2", description="Endpoint to execute and retrieve results for use case 2.")
 def get_usecase2():
     """Endpoint to execute and retrieve results for use case 2."""
     try:
