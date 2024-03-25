@@ -31,7 +31,7 @@ EXPOSE 9200
 EXPOSE 5601
 
 # Run script or command to start your application
-CMD ["python", "scripts/etl/etlscript.py"]
+CMD ["python", "api.py"]
 
 ## will run it for running complete project at once
 # CMD ["python", "api.py"]
