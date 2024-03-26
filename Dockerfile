@@ -30,7 +30,7 @@ EXPOSE 9200
 # 3. Expose port 9200 for Kibana to allow external access
 EXPOSE 5601
 
-# Run script or command to start your application
+# Run script or command to start the application
 CMD ["python", "api.py"]
 
 ## will run it for running complete project at once

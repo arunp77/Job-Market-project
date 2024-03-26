@@ -170,7 +170,8 @@ cspell.json
 .coverage
 .tox/
 
-# Elasticsearch logfiles
+# Elasticsearch logfiles 
+logs/
 logfile.log
 
 # Ignore Project-plan.md and Machine-learning-task.md files
