@@ -26,13 +26,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Start Elasticsearch
-      run: |
-        docker-compose -f docker-compose.yml up -d elasticsearch
-
-    - name: Load data into Elasticsearch
-      run: python scripts/database/db_connection.py
-
     - name: Create FastAPI application
       run: |
         python api.py
