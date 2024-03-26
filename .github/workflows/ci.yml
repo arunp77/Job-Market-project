@@ -25,10 +25,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    - name: Create FastAPI application
-      run: |
-        python api.py
   
     - name: Set up Docker Compose
       run: |
@@ -63,7 +59,7 @@ jobs:
       run: docker pull arunp77/job_market:latest
 
     - name: Deploy Docker image to production
-      run: docker run -d -p 80:80 arunp77/job_market:latest
+      run: docker run -d -p 80:80 --name job_market_container arunp77/job_market:latest
 
     - name: Store environment variables
       run: |
