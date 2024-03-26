@@ -58,8 +58,9 @@ jobs:
     - name: Pull Docker image
       run: docker pull arunp77/job_market:latest
 
-    - name: Deploy Docker image to production
-      run: docker run -d -p 80:80 --name job_market_container arunp77/job_market:latest
+    # docker image deployment : for future  
+    #- name: Deploy Docker image to production
+    #  run: docker run -d -p 80:80 --name job_market_container arunp77/job_market:latest
 
     - name: Store environment variables
       run: |
