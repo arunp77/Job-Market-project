@@ -90,3 +90,38 @@ Summary of the steps that one can take to create a Docker image  and integrate i
    EXPOSE 8000
    ```
    If you don't add the `EXPOSE 8000` instruction in your `Dockerfile`, it won't prevent your FastAPI application from running within the Docker container. However, it will affect how you access the application from outside the container.
+
+## Usage
+This Docker image hosts the "Job Market" application. The application provides insights and analysis on job market data sourced from various sources. To use this Docker image, follow these steps:
+1. **Pull the Docker Image**: Use the following command to pull the Docker image from Docker Hub:
+    ```bash
+    docker pull arunp77/job_market
+    ```
+
+2. **Run the Docker Container**: After pulling the image, run the Docker container using the following command:
+    ```bash
+    docker run -d -p 8080:80 arunp77/job_market
+    ```
+
+    Replace `8080` with the desired host port if you want to map it to a different port on your host machine.
+
+3. **Access the Application**: Once the container is running, you can access the "Job Market" application by navigating to `http://localhost:8080` in your web browser.
+
+## Configuration
+
+This Docker image does not require any specific configuration. However, you can customize the application settings by providing environment variables when running the container.
+
+## Dependencies
+
+The application included in this Docker image is built using the following dependencies:
+- Python 3.x
+- Flask
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- Scikit-learn
+- BeautifulSoup
+- Requests
+
