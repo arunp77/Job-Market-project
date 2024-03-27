@@ -11,7 +11,7 @@
 
 This project aims to showcase skills in data engineering by gathering and analyzing job market data from various sources. By the end of the project, we aim to have a clearer understanding of the job market, including sectors with the highest demand, required skills, active cities, and more.
 
-![Process](images/steps1.png)
+![Process](images/steps2.png)
 
 ## Prerequisite
 - **WebScrapping:** BeautifulSoup, Selenium
@@ -95,7 +95,7 @@ Job-Market-project/
 ├── images/                                     # Directory for image files
 ├── scripts/                                    # Directory for scripts
 │   ├── web_scraping/                          # Directory for web scraping scripts
-│   │   ├── adjurna.py                          # Script for Adjurna data extraction
+│   │   ├── adzuna.py                          # Script for adzuna data extraction
 │   │   ├── muse.py                             # Script for Muse data extraction
 │   │   └── ss.py                               # Script for Stepstone data extraction
 │   ├── etl/                                    # Directory for ETL scripts
@@ -106,17 +106,17 @@ Job-Market-project/
 │        └── uscase.py                          # Use case plot analysis script
 ├── data/                                      # Directory for data
 │   ├── scraped_data/                          # Directory for scraped data
-│   │   ├── adjurna/                           # Directory for Adjurna data
+│   │   ├── adzuna/                           # Directory for adzuna data
 │   │   │   └── csv/                           # Directory for CSV files
-│   │   │       └── adzuna_scrapped_data.csv   # Adjurna scraped data file
+│   │   │       └── adzuna_scrapped_data.csv   # adzuna scraped data file
 │   │   ├── muse/                              # Directory for Muse data
 │   │   │   └── csv/                           # Directory for CSV files
 │   │   │       └── muse_scrapped_data.csv     # Muse scraped data file
 │   │   └── ss/                                # Directory for Stepstone data
 │   │       └── ss_datascience_germany_20240221.csv # Stepstone data file
 │   └── processed_data/                        # Directory for processed data
-│       ├── adjurna_processed_data/            # Directory for processed Adjurna data
-│       │   └── adzuna_scrapped_data.csv       # Processed Adjurna data file
+│       ├── adzuna_processed_data/            # Directory for processed adzuna data
+│       │   └── adzuna_scrapped_data.csv       # Processed adzuna data file
 │       ├── muse_processed_data/               # Directory for processed Muse data
 │       │   └── muse_scrapped_data.csv         # Processed Muse data file
 │       └── ss_processed_data/                 # Directory for processed Stepstone data
@@ -179,10 +179,11 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 Check out this video I uploaded to YouTube. In this video, I have shown a step-by-step demo for the project:
 
 <div style="border: 1px solid white; padding: 10px;">
-  <a href="https://www.youtube.com/watch?v=6GZUVTkPpHA">
-    <img src="https://img.youtube.com/vi/6GZUVTkPpHA/0.jpg" alt="Click to Watch the Video" style="width: 100%; border: 1px solid #000;">
+  <a href="https://www.youtube.com/watch?v=j9cjxD2FiCI&t=2s">
+    <img src="https://img.youtube.com/vi/j9cjxD2FiCI/0.jpg" alt="Click to Watch the Video" style="width: 100%; border: 1px solid #000;">
   </a>
 </div>
+
 
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
