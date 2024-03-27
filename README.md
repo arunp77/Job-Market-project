@@ -174,13 +174,12 @@ Feedback and contributions are welcome! Please open an issue or create a pull re
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
-## Resource
+## Demo video
 
-> [Link to the docs for project](https://docs.google.com/document/d/1glRF8HtyNqcHnZud8KqeJYLdC07_MqjuFGJVOuw7gBc/edit)
+Check out this video I uploaded to YouTube. In this video, I have shown a step-by-step demo for the project:
 
-Check out this video I uploaded to YouTube:
+[![Click to Watch the Video](https://img.youtube.com/vi/6GZUVTkPpHA/0.jpg)](https://www.youtube.com/watch?v=6GZUVTkPpHA)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6GZUVTkPpHA" frameborder="0" allowfullscreen></iframe>
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
