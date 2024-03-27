@@ -110,6 +110,22 @@ This Docker image hosts the "Job Market" application. The application provides i
 ## Configuration
 
 This Docker image does not require any specific configuration. However, you can customize the application settings by providing environment variables when running the container.
+-  View a summary of image vulnerabilities and recommendations → 
+   ```bash
+   docker scout quickview arunp77/job_market
+   ```
+- View vulnerabilities → 
+  ```bash
+  docker scout cves arunp77/job_market
+  ```
+- View base image update recommendations → 
+  ```bash
+  docker scout recommendations arunp77/job_market
+  ```
+- Include policy results in your quickview by supplying an organization → 
+  ```bash
+  docker scout quickview arunp77/job_market --org <organization>
+  ```
 
 ## Dependencies
 
