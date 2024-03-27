@@ -178,6 +178,10 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 > [Link to the docs for project](https://docs.google.com/document/d/1glRF8HtyNqcHnZud8KqeJYLdC07_MqjuFGJVOuw7gBc/edit)
 
+Check out this video I uploaded to YouTube:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6GZUVTkPpHA" frameborder="0" allowfullscreen></iframe>
+
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
 ## Launch on Binder
