@@ -14,7 +14,7 @@ This project aims to showcase skills in data engineering by gathering and analyz
 ![Process](images/steps2.png)
 
 ## Prerequisite
-- **WebScrapping:** BeautifulSoup, Selenium
+- **WebScrapping:** BeautifulSoup, Selenium, [Adzuna API](https://developer.adzuna.com/), [Muse API](https://www.themuse.com/developers/api/v2)
 - **Python:** -3.10.x
 - **NoSQL:** ElasticSearch 
 - **Docker Compose:** Docker v2.15.1
@@ -129,7 +129,14 @@ Job-Market-project/
 └── UserStories.md                             # User stories file
 ```
 
-## Elasticsearch Integration <a name="elasticsearch-integration"></a>
+# Details on individual components
+
+## Data extraction
+For more details, how we planned data extraction via APIs, please have a look at: 
+[data-extraction-api](data-extraction-api.md)
+
+
+## Database: Elasticsearch Integration <a name="elasticsearch-integration"></a>
 
 In this project, we utilize Elasticsearch as our primary database solution for efficient storage, retrieval, and analysis of structured and unstructured data. Elasticsearch is a distributed, RESTful search and analytics engine designed for horizontal scalability, real-time search, and robust analytics capabilities. Elasticsearch proves invaluable in situations requiring full-text search, real-time indexing, scalability, and advanced analytics capabilities. Here python is utilized for seamless interaction with Elasticsearch by leveraging the `elasticsearch` Python client library. We can install the `elasticsearch` module using the following command in your terminal or command prompt:
 ```bash
@@ -142,11 +149,6 @@ pip install elasticsearch
   - **Docker Images used for the Kibana:** [Kibana](https://www.docker.elastic.co/r/kibana/kibana:8.1.2) 
 - Docker Compose orchestrates the deployment of these services, ensuring consistent and reproducible environments across different development and deployment stages. By containerizing Elasticsearch, we achieve greater portability, scalability, and ease of deployment, making it convenient to deploy our Elasticsearch infrastructure in various environments with minimal configuration.
 
-## Docker Images
-
-We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment. For more details, in what way we planned our project Docker image, please see [docker-image integration](Docker-image-integration.md).
-
-
 ## FASTApi deployment <a name="fast-api"></a>
 - The first step is to install the `fastapi` and `uvicorn` libraries. `uvicorn` is a library that allows us to launch the server created by FastAPI. 
 - We need an [Asynchronous Server Gateway Interface](https://asgi.readthedocs.io/en/latest/) (ASGI server), for production such as [Uvicorn](https://www.uvicorn.org/) or [Hypercorn](https://github.com/pgjones/hypercorn), but we choose uvicorn to deploy on a local machine.
@@ -157,7 +159,11 @@ We also maintain a Docker image for our project, available on Docker Hub at [aru
   ```
 
    ![query](images/api-query.png)
-  
+
+## Docker Images
+
+We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment. For more details, in what way we planned our project Docker image, please see [docker-image integration](Docker-image-integration.md).
+
 ## Contributors
 This project is a group effort and would not have been possible without the help of these contributors:
 
