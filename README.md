@@ -178,7 +178,11 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 Check out this video I uploaded to YouTube. In this video, I have shown a step-by-step demo for the project:
 
-[![Click to Watch the Video](https://img.youtube.com/vi/6GZUVTkPpHA/0.jpg)](https://www.youtube.com/watch?v=6GZUVTkPpHA)
+<div style="border: 1px solid #ccc; padding: 10px;">
+  <a href="https://www.youtube.com/watch?v=6GZUVTkPpHA">
+    <img src="https://img.youtube.com/vi/6GZUVTkPpHA/0.jpg" alt="Click to Watch the Video" style="width: 80%; border: 1px solid #000;">
+  </a>
+</div>
 
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
