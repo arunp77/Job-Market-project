@@ -8,7 +8,7 @@ COPY requirements.txt /app/
 
 # Layer 3
 # Copy the requirements file to the working directory
-COPY requirements.txt .
+#COPY requirements.txt .
 
 # Layer 4
 # Set the working directory in the container
