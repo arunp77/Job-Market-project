@@ -185,7 +185,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 Check out this video I uploaded to YouTube. In this video, I have shown a step-by-step demo for the project:
 
 <div style="border: 1px solid white; padding: 10px;">
-  <a href="https://www.youtube.com/watch?v=j9cjxD2FiCI&t=2s">
+  <a href="https://www.youtube.com/watch?v=j9cjxD2FiCI&t=2s" target="_blank">
     <img src="https://img.youtube.com/vi/j9cjxD2FiCI/0.jpg" alt="Click to Watch the Video" style="width: 100%; border: 1px solid #000;">
   </a>
 </div>
