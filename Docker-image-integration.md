@@ -141,3 +141,6 @@ The application included in this Docker image is built using the following depen
 - BeautifulSoup
 - Requests
 
+
+## References
+- [Docker for Machine Learning Engineers](https://www.realworldml.net/blog/docker-for-machine-learning-engineers?s=03)
