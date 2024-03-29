@@ -24,16 +24,6 @@ services:
     networks:
       - es-net
 
-  python-app:
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - 8000:8000
-    depends_on:
-      - elasticsearch
-    networks:
-      - es-net
 
 networks:
   es-net:
