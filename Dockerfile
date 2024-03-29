@@ -1,21 +1,20 @@
 # Use an official Python runtime as a parent image
 FROM python:3.10
 
-# Set the working directory in the container
-WORKDIR /app
-
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY requirements.txt /app/
 
 # Copy the requirements file to the working directory
 COPY requirements.txt .
+
+# Set the working directory in the container
+WORKDIR /app
 
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire project directory into the container
 COPY . .
-
 
 # Expose ports for FastAPI (8000), Elasticsearch (9200), and Kibana (5601)
 # Note: Exposing ports in a Dockerfile does not publish them to the host machine
@@ -32,6 +31,3 @@ EXPOSE 5601
 
 # Run script or command to start the application
 CMD ["python", "api.py"]
-
-## will run it for running complete project at once
-# CMD ["python", "api.py"]
