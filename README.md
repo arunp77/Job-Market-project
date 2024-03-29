@@ -150,6 +150,7 @@ pip install elasticsearch
 - Docker Compose orchestrates the deployment of these services, ensuring consistent and reproducible environments across different development and deployment stages. By containerizing Elasticsearch, we achieve greater portability, scalability, and ease of deployment, making it convenient to deploy our Elasticsearch infrastructure in various environments with minimal configuration.
 
 ## FASTApi deployment <a name="fast-api"></a>
+- For more details on the, please check [FASTApi.md](FASTApi.md) file.
 - The first step is to install the `fastapi` and `uvicorn` libraries. `uvicorn` is a library that allows us to launch the server created by FastAPI. 
 - We need an [Asynchronous Server Gateway Interface](https://asgi.readthedocs.io/en/latest/) (ASGI server), for production such as [Uvicorn](https://www.uvicorn.org/) or [Hypercorn](https://github.com/pgjones/hypercorn), but we choose uvicorn to deploy on a local machine.
 
