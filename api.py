@@ -57,9 +57,9 @@ def load_data():
         print(f"An unexpected error occurred: {str(e)}")
         return {"error": "Failed to load data into Elasticsearch."}
 
-@api.get("/usecase1", description="Endpoint to execute and retrieve results for use case 1.")
+@api.get("/usecase1", description="Endpoint to execute and retrieve results for use case 1 and it gives the distribution of job postings over time for specific job titles, including Data Engineer, Data Scientist, Machine Learning, and Data Analyst.")
 def get_usecase1():
-    """Endpoint to execute and retrieve results for use case 1."""
+    """Endpoint to execute and retrieve results for use case 1 and it gives the distribution of job postings over time for specific job titles, including Data Engineer, Data Scientist, Machine Learning, and Data Analyst."""
     try:
         # Define the search query for use case 1
         query = usecase(1)
@@ -77,7 +77,7 @@ def get_usecase1():
         print(f"An unexpected error occurred: {str(e)}")
         return {"error": "Failed to execute use case 1."}
     
-@api.get("/usecase2", description="Endpoint to execute and retrieve results for use case 2.")
+@api.get("/usecase2", description="Endpoint to execute and retrieve results for use case 2 and finds the most common job titles and companies in the dataset.")
 def get_usecase2():
     """Endpoint to execute and retrieve results for use case 2."""
     try:
@@ -96,6 +96,12 @@ def get_usecase2():
         # Log and return error message
         print(f"An unexpected error occurred: {str(e)}")
         return {"error": "Failed to execute use case 2."}
+
+@api.get("/thank-you", description="Thank you for using the Job Market API! We hope you found it helpful..")
+def thank_you():
+    """Endpoint to display a thank you message."""
+    return {"message": "Thank you for using the Job Market API! We hope you found it helpful."}
+
 
 if __name__ == "__main__":
     uvicorn.run(api, host="0.0.0.0", port=8000)
