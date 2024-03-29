@@ -41,4 +41,5 @@ EXPOSE 5601
 
 # Layer 11
 # Run script or command to start the application
-ENTRYPOINT ["python", "api.py"]
+# ENTRYPOINT ["python", "api.py"]
+CMD ["python", "api.py"]
