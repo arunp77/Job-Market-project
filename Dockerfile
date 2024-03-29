@@ -25,7 +25,7 @@ COPY . /app/
 # Layer 7
 # Expose ports for FastAPI (8000), Elasticsearch (9200), and Kibana (5601)
 # Note: Exposing ports in a Dockerfile does not publish them to the host machine
-# This only serves as documentation for users of the image
+# This only serves as documentation for users of the image 
 
 # Layer 8
 # 1. Expose port 8000 for FastApi to allow external access
