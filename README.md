@@ -195,6 +195,10 @@ Check out this video I uploaded to YouTube. In this video, I have shown a step-b
 
 The slides are available at: [Google slides](https://docs.google.com/presentation/d/1TvVo8ouzRPYBsGkFl759gQbxXgEjBvxZP8pezeXoSs0/edit?usp=drivesdk)
 
+<iframe src="https://docs.google.com/presentation/d/1TvVo8ouzRPYBsGkFl759gQbxXgEjBvxZP8pezeXoSs0/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
 ## Launch on Binder
