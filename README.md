@@ -1,4 +1,4 @@
-# InsightfulRecruit: Unveiling the Job Market Landscape through Data Engineering
+se# InsightfulRecruit: Unveiling the Job Market Landscape through Data Engineering
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/arunp77/Job-Market-project)](https://github.com/arunp77/Job-Market-project) 
 ![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg) 
@@ -193,7 +193,7 @@ Check out this video I uploaded to YouTube. In this video, I have shown a step-b
 
 ## Slides
 
-The slides are available at: 
+The slides are available at: [Google slides](https://docs.google.com/presentation/d/1TvVo8ouzRPYBsGkFl759gQbxXgEjBvxZP8pezeXoSs0/edit?usp=drivesdk)
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
