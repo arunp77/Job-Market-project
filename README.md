@@ -191,7 +191,9 @@ Check out this video I uploaded to YouTube. In this video, I have shown a step-b
   </a>
 </div>
 
+## Slides
 
+The slides are available at: 
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
