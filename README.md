@@ -161,6 +161,11 @@ pip install elasticsearch
 
    ![query](images/api-query.png)
 
+
+### API security features
+
+Currently working on adding security features like provinind access rights, keeping log of Username and password in Mongodb database and many more....
+
 ## Docker Images
 
 We also maintain a Docker image for our project, available on Docker Hub at [arunp77/job_market](https://hub.docker.com/r/arunp77/job_market), ensuring accessibility and easy deployment. For more details, in what way we planned our project Docker image, please see [docker-image integration](Docker-image-integration.md).
