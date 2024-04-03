@@ -197,6 +197,8 @@ Check out this video I uploaded to YouTube. In this video, I have shown a step-b
 </div>
 
 
+## Project as a package:
+It is available at [npm package manager](https://www.npmjs.com/package/job-market-project)
 
 <!--------reference: https://github.com/kevAnto/fast-API/tree/main>------>
 
