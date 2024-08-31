@@ -25,7 +25,7 @@ def load_api_key(env_var_name):
     >>> load_api_key('API_KEY1') is not None
     True
     """
-    return os.getenv(env_var_name)
+    return os.getenv(.env)
 
 def build_url(page_num):
     """
