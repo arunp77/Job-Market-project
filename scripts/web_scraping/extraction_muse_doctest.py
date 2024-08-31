@@ -1,3 +1,11 @@
+# extraction_muse_doctest.py
+#
+# To test it, run the command
+#
+# python -m doctest -v extraction_muse.py
+#
+# from the directory itself.
+#======================================
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
